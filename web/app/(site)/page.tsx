@@ -33,8 +33,9 @@ const FAQ = [
   },
 ];
 
+/** The hero shows a receipt from a published work: not an eval case, not a reviewer-path test run. */
 function pickHero(items: Request[]): Request | undefined {
-  const real = items.filter((r) => !isGolden(r));
+  const real = items.filter((r) => !isGolden(r) && !r.title.startsWith('Reviewer path '));
   const pool = real.length ? real : items;
   return (
     pool.find((r) => r.receipt && r.paid !== '0') ??
