@@ -12,7 +12,7 @@ const FONTS =
   'https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;500;600;700&display=swap';
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://clearance-genlayer.vercel.app'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://clearance-genlayer-sooty.vercel.app'),
   title: { default: 'Clearance: plain-language licenses that answer for themselves', template: '%s · Clearance' },
   description:
     'A creator writes their terms once in plain words. Anyone asks whether a use is allowed, GenLayer validators read the terms against the use and answer free, paid, denied or unclear, and every yes becomes an on-chain receipt.',

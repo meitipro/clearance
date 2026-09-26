@@ -1,0 +1,347 @@
+{
+  "runs": {
+    "rp1": {
+      "site": "https://clearance-genlayer-sooty.vercel.app",
+      "contract": "0x0336dB3c42C1ee09504664d7eCa63ae90A606bDf",
+      "started": "2026-09-26T01:51:43.069Z",
+      "steps": [
+        {
+          "at": "2026-09-26T01:51:59.226Z",
+          "key": "faucet-creator",
+          "ok": true,
+          "http": 200,
+          "sent_address": "0xd066b1d5e7f8cd5bfe2d98402eaf11408cb2c619",
+          "answered_address": "0xD066B1D5e7f8Cd5BFe2d98402Eaf11408CB2C619",
+          "before": "0",
+          "after": "20000000000000000000",
+          "read_after": "20000000000000000000"
+        },
+        {
+          "at": "2026-09-26T01:52:01.493Z",
+          "key": "faucet-user",
+          "ok": true,
+          "http": 200,
+          "sent_address": "0x43be35a11c498fd85dcb957078f24544d9af875d",
+          "answered_address": "0x43Be35a11C498Fd85Dcb957078f24544D9Af875D",
+          "before": "0",
+          "after": "20000000000000000000",
+          "read_after": "20000000000000000000"
+        },
+        {
+          "at": "2026-09-26T01:52:21.561Z",
+          "key": "publish",
+          "method": "publish_work",
+          "account": "review_creator_rp1",
+          "from": "0xD066B1D5e7f8Cd5BFe2d98402Eaf11408CB2C619",
+          "args": [
+            "Reviewer path rp1: Harbour at Dawn",
+            "https://clearance-genlayer-sooty.vercel.app/docs/more/limitations",
+            "Free for personal use, with credit to the photographer. Commercial use online, including company websites, ads and social media for a business, needs the commercial tier.",
+            "{\"creator\":\"Review Run Photographer\",\"kind\":\"photo\",\"tiers\":[{\"id\":\"commercial\",\"name\":\"Commercial\",\"scope\":\"Commercial use online for one business\",\"price\":\"12\"}]}"
+          ],
+          "value": "0",
+          "hash": "0x72b1fb7dd46dcebeaada7081a6ee54d2f6190224e824563d61226c02c2c80759",
+          "ok": true,
+          "status": "ACCEPTED",
+          "execution": "SUCCESS",
+          "returned": 17,
+          "refusal": null,
+          "seconds_to_decision": 20
+        },
+        {
+          "at": "2026-09-26T01:52:35.892Z",
+          "key": "ask-commercial",
+          "method": "ask",
+          "account": "review_user_rp1",
+          "from": "0x43Be35a11C498Fd85Dcb957078f24544D9Af875D",
+          "args": [
+            17,
+            "Hero image on the landing page of my company website, which sells kayak tours."
+          ],
+          "value": "0",
+          "hash": "0xec83dc6acc03d4b4ef18edc1232631205f31ac9d12dc95b9dfe3b6acb1a5c17b",
+          "ok": true,
+          "status": "ACCEPTED",
+          "execution": "SUCCESS",
+          "returned": 30,
+          "refusal": null,
+          "seconds_to_decision": 14
+        },
+        {
+          "at": "2026-09-26T01:52:36.848Z",
+          "key": "read-commercial",
+          "ok": true,
+          "request_id": 30,
+          "verdict": "PAID",
+          "tier": "commercial",
+          "price": "12000000000000000000",
+          "reason": "The proposed use is a hero image on a company website selling services, which is explicitly listed as requiring the commercial tier for commercial use online."
+        },
+        {
+          "at": "2026-09-26T01:53:20.845Z",
+          "key": "buy",
+          "method": "buy",
+          "account": "review_user_rp1",
+          "from": "0x43Be35a11C498Fd85Dcb957078f24544D9Af875D",
+          "args": [
+            30
+          ],
+          "value": "12000000000000000000",
+          "hash": "0x80686bc6b502a1aadff6202c9fcef77209483a6a2ae4dcfda9f0fa04df4cc6b5",
+          "ok": true,
+          "status": "ACCEPTED",
+          "execution": "SUCCESS",
+          "returned": 30,
+          "refusal": null,
+          "seconds_to_decision": 12,
+          "final_status": "FINALIZED"
+        },
+        {
+          "at": "2026-09-26T01:53:22.039Z",
+          "key": "balance-buy",
+          "ok": false,
+          "before": "19899999999999966118",
+          "after": "7999841879749994354",
+          "price": "12000000000000000000",
+          "net_fee": "78631000002823",
+          "expected": "7899921368999963295",
+          "difference": "99920510750031059"
+        },
+        {
+          "at": "2026-09-26T01:53:39.510Z",
+          "key": "ask-silent",
+          "method": "ask",
+          "account": "review_user_rp1",
+          "from": "0x43Be35a11C498Fd85Dcb957078f24544D9Af875D",
+          "args": [
+            17,
+            "Project the photo on a wall during a free outdoor film night that our neighbourhood association runs in the park."
+          ],
+          "value": "0",
+          "hash": "0x706ac1f9b0fe752aff415464b2e95b4aa71e167793297bedf2bb38500091d76a",
+          "ok": true,
+          "status": "ACCEPTED",
+          "execution": "SUCCESS",
+          "returned": 31,
+          "refusal": null,
+          "seconds_to_decision": 17
+        },
+        {
+          "at": "2026-09-26T01:53:40.736Z",
+          "key": "read-silent",
+          "ok": true,
+          "request_id": 31,
+          "verdict": "FREE",
+          "tier": "",
+          "reason": "A free neighborhood association film night is considered personal/non-commercial use, and the commercial tier specifically targets online business use."
+        },
+        {
+          "at": "2026-09-26T01:54:23.979Z",
+          "key": "withdraw",
+          "method": "withdraw",
+          "account": "review_creator_rp1",
+          "from": "0xD066B1D5e7f8Cd5BFe2d98402Eaf11408CB2C619",
+          "args": [],
+          "value": "0",
+          "hash": "0xa4b2a497e014e8ab1e2463b3acf2454fca043f013cbcc245faa1f4ea0cc630c2",
+          "ok": true,
+          "status": "ACCEPTED",
+          "execution": "SUCCESS",
+          "returned": 12000000000000000000,
+          "refusal": null,
+          "seconds_to_decision": 17,
+          "final_status": "FINALIZED"
+        },
+        {
+          "at": "2026-09-26T01:54:25.211Z",
+          "key": "balance-withdraw",
+          "ok": false,
+          "owed": "12000000000000000000",
+          "before": "19999921362499997177",
+          "after": "31999795056999994354",
+          "net_fee": "151305500002823",
+          "expected": "31999770056999994354",
+          "difference": "25000000000000"
+        },
+        {
+          "at": "2026-09-26T01:54:30.497Z",
+          "key": "page-work",
+          "ok": true,
+          "url": "https://clearance-genlayer-sooty.vercel.app/w/17",
+          "http": 200
+        },
+        {
+          "at": "2026-09-26T01:54:31.531Z",
+          "key": "page-receipt-paid",
+          "ok": true,
+          "url": "https://clearance-genlayer-sooty.vercel.app/r/RC-0030",
+          "http": 200
+        },
+        {
+          "at": "2026-09-26T01:54:32.529Z",
+          "key": "page-receipt-silent",
+          "ok": true,
+          "url": "https://clearance-genlayer-sooty.vercel.app/r/RC-0031",
+          "http": 200
+        },
+        {
+          "at": "2026-09-26T01:56:02.066Z",
+          "key": "ask-silent-2",
+          "method": "ask",
+          "account": "review_user_rp1",
+          "from": "0x43Be35a11C498Fd85Dcb957078f24544D9Af875D",
+          "args": [
+            17,
+            "Printed cover of a paperback novel that I will sell in bookshops, a first run of 3,000 copies."
+          ],
+          "value": "0",
+          "hash": "0x303189c5ca1cc29810b1a4786e41f0523e98b63f2a00ef4ef12ee22800c0c3ff",
+          "ok": true,
+          "status": "ACCEPTED",
+          "execution": "SUCCESS",
+          "returned": 32,
+          "refusal": null,
+          "seconds_to_decision": 17
+        },
+        {
+          "at": "2026-09-26T01:56:03.273Z",
+          "key": "read-ask-silent-2",
+          "ok": true,
+          "request_id": 32,
+          "verdict": "UNCLEAR",
+          "tier": "",
+          "reason": "The license mentions personal use and commercial use online only, but says nothing about commercial printed book covers, and no paid tier covers print use."
+        },
+        {
+          "at": "2026-09-26T01:56:10.995Z",
+          "key": "answer",
+          "method": "answer",
+          "account": "review_creator_rp1",
+          "from": "0xD066B1D5e7f8Cd5BFe2d98402Eaf11408CB2C619",
+          "args": [
+            32,
+            "FREE",
+            ""
+          ],
+          "value": "0",
+          "hash": "0x4837772899bc02aa0a78b5fce62f870e8f0ad7b726f2447cb5776247d717cccc",
+          "ok": true,
+          "status": "ACCEPTED",
+          "execution": "SUCCESS",
+          "returned": 32,
+          "refusal": null,
+          "seconds_to_decision": 8
+        },
+        {
+          "at": "2026-09-26T01:56:12.117Z",
+          "key": "read-answer",
+          "ok": true,
+          "request_id": 32,
+          "judge": "UNCLEAR",
+          "status": "CLEARED",
+          "receipt_kind": "CREATOR"
+        },
+        {
+          "at": "2026-09-26T01:56:17.760Z",
+          "key": "page-receipt-answered",
+          "ok": true,
+          "url": "https://clearance-genlayer-sooty.vercel.app/r/RC-0032",
+          "http": 200
+        }
+      ],
+      "accounts": {
+        "creator": "0xD066B1D5e7f8Cd5BFe2d98402Eaf11408CB2C619",
+        "user": "0x43Be35a11C498Fd85Dcb957078f24544D9Af875D",
+        "nonces_at_start": {
+          "creator": 0,
+          "user": 0
+        }
+      },
+      "finished": "2026-09-26T01:56:17.761Z",
+      "reconciled": {
+        "at": "2026-09-26T11:26:37.655Z",
+        "creator": {
+          "address": "0xD066B1D5e7f8Cd5BFe2d98402Eaf11408CB2C619",
+          "faucet": "20000000000000000000",
+          "received": "12000000000000000000",
+          "sent": "0",
+          "fees": "308572750008469",
+          "expected": "31999691427249991531",
+          "actual": "31999716427249991531",
+          "exact": false,
+          "difference": "25000000000000",
+          "message_fee_consumed": "25000000000000",
+          "expected_without_message_fee": "31999716427249991531",
+          "exact_without_message_fee": true,
+          "transactions": [
+            {
+              "key": "publish",
+              "hash": "0x72b1fb7dd46dcebeaada7081a6ee54d2f6190224e824563d61226c02c2c80759",
+              "value": "0",
+              "net_fee": "78637500002823",
+              "message_fee_consumed": "0"
+            },
+            {
+              "key": "withdraw",
+              "hash": "0xa4b2a497e014e8ab1e2463b3acf2454fca043f013cbcc245faa1f4ea0cc630c2",
+              "value": "0",
+              "net_fee": "151305500002823",
+              "message_fee_consumed": "25000000000000"
+            },
+            {
+              "key": "answer",
+              "hash": "0x4837772899bc02aa0a78b5fce62f870e8f0ad7b726f2447cb5776247d717cccc",
+              "value": "0",
+              "net_fee": "78629750002823",
+              "message_fee_consumed": "0"
+            }
+          ]
+        },
+        "user": {
+          "address": "0x43Be35a11C498Fd85Dcb957078f24544D9Af875D",
+          "faucet": "20000000000000000000",
+          "received": "0",
+          "sent": "12000000000000000000",
+          "fees": "317097000011292",
+          "expected": "7999682902999988708",
+          "actual": "7999682902999988708",
+          "exact": true,
+          "difference": "0",
+          "message_fee_consumed": "0",
+          "expected_without_message_fee": "7999682902999988708",
+          "exact_without_message_fee": true,
+          "transactions": [
+            {
+              "key": "ask-commercial",
+              "hash": "0xec83dc6acc03d4b4ef18edc1232631205f31ac9d12dc95b9dfe3b6acb1a5c17b",
+              "value": "0",
+              "net_fee": "79489250002823",
+              "message_fee_consumed": "0"
+            },
+            {
+              "key": "buy",
+              "hash": "0x80686bc6b502a1aadff6202c9fcef77209483a6a2ae4dcfda9f0fa04df4cc6b5",
+              "value": "12000000000000000000",
+              "net_fee": "78631000002823",
+              "message_fee_consumed": "0"
+            },
+            {
+              "key": "ask-silent",
+              "hash": "0x706ac1f9b0fe752aff415464b2e95b4aa71e167793297bedf2bb38500091d76a",
+              "value": "0",
+              "net_fee": "79528250002823",
+              "message_fee_consumed": "0"
+            },
+            {
+              "key": "ask-silent-2",
+              "hash": "0x303189c5ca1cc29810b1a4786e41f0523e98b63f2a00ef4ef12ee22800c0c3ff",
+              "value": "0",
+              "net_fee": "79448500002823",
+              "message_fee_consumed": "0"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

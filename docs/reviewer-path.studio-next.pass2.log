@@ -1,0 +1,10 @@
+  -> PAID commercial 12 GEN  The proposed use is a hero image on a company website selling services, which is explicitly listed as requiring the commercial tier for commercial use online.
+  -> FREE   A free neighborhood association film night is considered personal/non-commercial use, and the commercial tier specifically targets online business use.
+ask-silent-2: ask ok in 17 s  0x303189c5ca1cc29810b1a4786e41f0523e98b63f2a00ef4ef12ee22800c0c3ff
+  -> UNCLEAR   The license mentions personal use and commercial use online only, but says nothing about commercial printed book covers, and no paid tier covers print use.
+answer: answer ok in 8 s  0x4837772899bc02aa0a78b5fce62f870e8f0ad7b726f2447cb5776247d717cccc
+  -> the creator answered FREE on request 32; receipt true (CREATOR)
+page-receipt-answered: HTTP 200 shows it  https://clearance-genlayer-sooty.vercel.app/r/RC-0032
+
+recorded in docs/reviewer-path.studio-next.json (run rp1)
+reviewer-path pass2 exit=0

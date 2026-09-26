@@ -47,6 +47,11 @@ function note(entry) {
   save();
 }
 
+/** Whether a step with this key was already recorded, ok or not: reads and checks are not repeated on a resume. */
+function recorded(key) {
+  return log.steps.some((s) => s.key === key);
+}
+
 const reader = readClient();
 async function view(functionName, args) {
   return JSON.parse(String(await retried(() => reader.readContract({ address: CONTRACT, functionName, args }), 5)));
@@ -135,10 +140,10 @@ const workId = Number(published.returned);
 const paidAsk = await write('ask-commercial', userName, 'ask', [workId, 'Hero image on the landing page of my company website, which sells kayak tours.']);
 const paidId = Number(paidAsk.returned);
 const paid = await view('get_request', [paidId]);
-note({ key: 'read-commercial', ok: true, request_id: paidId, verdict: paid.verdict, tier: paid.tier, price: paid.price, reason: paid.reason });
+if (!recorded('read-commercial')) note({ key: 'read-commercial', ok: true, request_id: paidId, verdict: paid.verdict, tier: paid.tier, price: paid.price, reason: paid.reason });
 console.log(`  -> ${paid.verdict} ${paid.tier} ${paid.price !== '0' ? fmt(BigInt(paid.price)) : ''}  ${paid.reason}`);
 let bought = null;
-if (paid.verdict === 'PAID') {
+if (paid.verdict === 'PAID' && !recorded('balance-buy')) {
   const before = await balanceOf(user);
   bought = await write('buy', userName, 'buy', [paidId], BigInt(paid.price), { final: true });
   const after = await balanceOf(user);
@@ -152,18 +157,40 @@ if (paid.verdict === 'PAID') {
 const silentAsk = await write('ask-silent', userName, 'ask', [workId, 'Project the photo on a wall during a free outdoor film night that our neighbourhood association runs in the park.']);
 const silentId = Number(silentAsk.returned);
 const silent = await view('get_request', [silentId]);
-note({ key: 'read-silent', ok: true, request_id: silentId, verdict: silent.verdict, tier: silent.tier, reason: silent.reason });
+if (!recorded('read-silent')) note({ key: 'read-silent', ok: true, request_id: silentId, verdict: silent.verdict, tier: silent.tier, reason: silent.reason });
 console.log(`  -> ${silent.verdict} ${silent.tier}  ${silent.reason}`);
-if (silent.verdict === 'UNCLEAR' || silent.verdict === 'DENIED') {
-  await write('answer', creatorName, 'answer', [silentId, 'FREE', '']);
-  const answered = await view('get_request', [silentId]);
-  note({ key: 'read-answer', ok: answered.receipt === true && answered.receipt_kind === 'CREATOR', status: answered.status, receipt_kind: answered.receipt_kind });
-  console.log(`  -> creator answered FREE; receipt ${answered.receipt} (${answered.receipt_kind})`);
+// The judge may still answer a use it can decide. Try up to two more uses the
+// license is silent on, until one reaches the creator, and have the creator answer it.
+const SILENT = [
+  ['ask-silent', silentId],
+];
+const MORE = [
+  ['ask-silent-2', 'Printed cover of a paperback novel that I will sell in bookshops, a first run of 3,000 copies.'],
+  ['ask-silent-3', 'A tattoo of the photo on my own arm.'],
+];
+let reached = ['UNCLEAR', 'DENIED'].includes(silent.verdict) ? silentId : null;
+for (const [key, use] of MORE) {
+  if (reached) break;
+  const asked = await write(key, userName, 'ask', [workId, use]);
+  const id = Number(asked.returned);
+  const r = await view('get_request', [id]);
+  if (!recorded('read-' + key)) note({ key: 'read-' + key, ok: true, request_id: id, verdict: r.verdict, tier: r.tier, reason: r.reason });
+  console.log(`  -> ${r.verdict} ${r.tier}  ${r.reason}`);
+  SILENT.push([key, id]);
+  if (r.verdict === 'UNCLEAR' || r.verdict === 'DENIED') reached = id;
+}
+if (reached) {
+  await write('answer', creatorName, 'answer', [reached, 'FREE', '']);
+  const answered = await view('get_request', [reached]);
+  if (!recorded('read-answer')) note({ key: 'read-answer', ok: answered.receipt === true && answered.receipt_kind === 'CREATOR', request_id: reached, judge: answered.verdict, status: answered.status, receipt_kind: answered.receipt_kind });
+  console.log(`  -> the creator answered FREE on request ${reached}; receipt ${answered.receipt} (${answered.receipt_kind})`);
 }
 
 // -- 5. withdraw, and the balance after finality --------------------------------------------------------
 const owed = BigInt((await view('get_work', [workId])).balance);
-if (owed > 0n) {
+if (recorded('balance-withdraw')) {
+  // withdrawn on an earlier pass
+} else if (owed > 0n) {
   const before = await balanceOf(creator);
   const w = await write('withdraw', creatorName, 'withdraw', [], 0n, { final: true });
   const after = await balanceOf(creator);
@@ -176,11 +203,14 @@ if (owed > 0n) {
 }
 
 // -- 6. the deployed site shows what the chain holds -------------------------------------------------
-for (const [key, url, needle] of [
+const pages = [
   ['page-work', `${site}/w/${workId}`, `Reviewer path ${run}`],
   ['page-receipt-paid', `${site}/r/RC-${String(paidId).padStart(4, '0')}`, 'Hero image on the landing page'],
   ['page-receipt-silent', `${site}/r/RC-${String(silentId).padStart(4, '0')}`, 'free outdoor film night'],
-]) {
+];
+if (reached) pages.push(['page-receipt-answered', `${site}/r/RC-${String(reached).padStart(4, '0')}`, 'by the creator']);
+for (const [key, url, needle] of pages) {
+  if (recorded(key)) continue;
   let ok = false;
   let status = 0;
   for (let attempt = 0; attempt < 6 && !ok; attempt++) {

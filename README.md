@@ -6,8 +6,8 @@ the use and answer **FREE**, **PAID** with a tier, **DENIED** or **UNCLEAR**. A 
 paid yes is bought on the spot, unclear ones go to the creator, and every receipt is pinned to the exact license
 version it was issued under.
 
-- **Site:** https://clearance-genlayer.vercel.app
-- **Docs:** https://clearance-genlayer.vercel.app/docs
+- **Site:** https://clearance-genlayer-sooty.vercel.app
+- **Docs:** https://clearance-genlayer-sooty.vercel.app/docs
 - **Contract:** [`0x0336dB3c42C1ee09504664d7eCa63ae90A606bDf`](https://explorer-studio-dev.genlayer.com/address/0x0336dB3c42C1ee09504664d7eCa63ae90A606bDf) on GenLayer **Studio Next** (chain 61997)
 - **Deploy transaction:** [`0xc0065821…4cd28`](https://explorer-studio-dev.genlayer.com/tx/0xc0065821db56ec5029c3c46c00669d3766fecc1c3c0017a0d567853f24e4cd28), source sha256 `3e7ef432f2391f49c99b8d8ae4d107de8798f9ca30902c5ecac3fb10149d872a`
 
@@ -23,6 +23,7 @@ it cannot prove who made a work. Every receipt says so.
 | Golden set locked | sha256 `c4ea4f69…af7c`, 2026-09-26T01:07:37Z, before the first run ([eval/golden.lock.json](eval/golden.lock.json)) |
 | Demo seed | 5 works, 17 requests (FREE 5, PAID 5, DENIED 5, UNCLEAR 2), 6 purchases, 4 creator answers, 1 amended license, 1 withdrawal, no failed step ([docs/seed.studio-next.md](docs/seed.studio-next.md)) |
 | Withdrawal after finality | owed 130 GEN; the creator's wallet went from 999.999921361499997177 to 1129.999795056249994354 GEN, 130 GEN less the transaction's fee |
+| Reviewer path on the live site | Two fresh accounts (nonce 0): the site's faucet, publish, ask → PAID → buy, ask → FREE, ask → UNCLEAR → creator's answer, withdraw, and the live pages, all through the site's own signing code. After finality the user's balance reconciles to the wei; the creator's does too once the 25,000,000,000,000 wei External message fee, listed as consumed but never charged, is left out ([docs/reviewer-path.studio-next.md](docs/reviewer-path.studio-next.md)) |
 | Tests | 143 passed offline, 4 live-network tests gated by `CLEARANCE_INTEGRATION=1` (all 4 pass) |
 | Mutations | 38 of 38 defences broken one at a time, each caught by a named test ([docs/MUTATIONS.md](docs/MUTATIONS.md)) |
 | Deployed bytes | identical to `contracts/clearance.py`, lint clean on the bytes read back (`python scripts/verify.py`) |
@@ -95,4 +96,4 @@ every attempt persisted before it was printed (33); and the score published as i
 
 No ask fee against spam (a refund would move money inside judging). A creator's priced answer uses a tier of the
 current license. The judge can miss, as H1 shows. Studio Next is a test network. See
-[Limitations](https://clearance-genlayer.vercel.app/docs/more/limitations).
+[Limitations](https://clearance-genlayer-sooty.vercel.app/docs/more/limitations).

@@ -1,0 +1,20 @@
+accounts: creator 0xD066B1D5e7f8Cd5BFe2d98402Eaf11408CB2C619, user 0x43Be35a11C498Fd85Dcb957078f24544D9Af875D, nonces at start {"creator":0,"user":0}
+faucet-creator: HTTP 200 0 GEN -> 20 GEN 
+faucet-user: HTTP 200 0 GEN -> 20 GEN 
+GenLayer RPC error (eth_getTransactionByHash): fetch failed
+publish: publish_work ok in 20 s  0x72b1fb7dd46dcebeaada7081a6ee54d2f6190224e824563d61226c02c2c80759
+ask-commercial: ask ok in 14 s  0xec83dc6acc03d4b4ef18edc1232631205f31ac9d12dc95b9dfe3b6acb1a5c17b
+  -> PAID commercial 12 GEN  The proposed use is a hero image on a company website selling services, which is explicitly listed as requiring the commercial tier for commercial use online.
+GenLayer RPC error (eth_getTransactionByHash): fetch failed
+buy: buy ok in 12 s  0x80686bc6b502a1aadff6202c9fcef77209483a6a2ae4dcfda9f0fa04df4cc6b5
+  buyer 19.899999999999967 GEN -> 7.999841879749995 GEN; price 12 GEN, fee 0.000078631000002823 GEN; difference 99920510750031059 wei
+ask-silent: ask ok in 17 s  0x706ac1f9b0fe752aff415464b2e95b4aa71e167793297bedf2bb38500091d76a
+  -> FREE   A free neighborhood association film night is considered personal/non-commercial use, and the commercial tier specifically targets online business use.
+withdraw: withdraw ok in 17 s  0xa4b2a497e014e8ab1e2463b3acf2454fca043f013cbcc245faa1f4ea0cc630c2
+  creator 19.999921362499997 GEN -> 31.999795056999993 GEN; owed 12 GEN, fee 0.000151305500002823 GEN; difference 25000000000000 wei
+page-work: HTTP 200 shows it  https://clearance-genlayer-sooty.vercel.app/w/17
+page-receipt-paid: HTTP 200 shows it  https://clearance-genlayer-sooty.vercel.app/r/RC-0030
+page-receipt-silent: HTTP 200 shows it  https://clearance-genlayer-sooty.vercel.app/r/RC-0031
+
+recorded in docs/reviewer-path.studio-next.json (run rp1)
+reviewer-path exit=0
