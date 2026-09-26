@@ -1,0 +1,16 @@
+{
+  "deployments": {
+    "studio-next": {
+      "chain_id": 61997,
+      "clearance": "0x0336dB3c42C1ee09504664d7eCa63ae90A606bDf",
+      "clearance_deployer": "0x5f33C00ab7d74A0718e4fBc02d3F7dC30945668a",
+      "clearance_file": "contracts/clearance.py",
+      "clearance_sha256": "3e7ef432f2391f49c99b8d8ae4d107de8798f9ca30902c5ecac3fb10149d872a",
+      "clearance_tx": "0xc0065821db56ec5029c3c46c00669d3766fecc1c3c0017a0d567853f24e4cd28",
+      "deployed_at": "2026-09-26T01:06:29Z",
+      "explorer": "https://explorer-studio-dev.genlayer.com",
+      "rpc": "https://studio-next.genlayer.com/api",
+      "runtime": "py-genlayer:5jycge4q8k23462jtb0b9fyey1s9qz928sz2nbrd9mg4sxqg2qng"
+    }
+  }
+}

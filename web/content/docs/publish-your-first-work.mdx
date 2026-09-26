@@ -1,0 +1,69 @@
+---
+title: Publish your first work
+description: Put a work, a license in your own words and up to four priced tiers on chain.
+---
+
+## What you need
+
+- A wallet on GenLayer Studio Next, chain 61997. The site adds the network for you and has a faucet for test GEN.
+- A link to the work or to your own page. It is shown beside the work so readers can check who is behind it.
+- The license, at most 1,500 characters, and up to four tiers.
+
+## Publish
+
+<Steps>
+  <Step>
+    Open [Publish a work](/publish). Give the title, your name as credit should read, the type of work and the link.
+  </Step>
+  <Step>
+    Write the license in your own words. The [writing guide](/docs/concepts/writing-a-license) shows what the judge
+    reads well.
+  </Step>
+  <Step>
+    Add tiers. Each has a name, an id (lower case letters, digits and hyphens), a one-line scope and a price in GEN
+    above zero. A use that is free belongs in the license text, not in a tier.
+  </Step>
+  <Step>
+    Check the preview. It is the judge prompt exactly as validators will read it, with your license and tiers fenced
+    in.
+  </Step>
+  <Step>
+    Sign. The work gets an id, its license becomes version 1, and your address becomes the creator on record: the
+    only account that can amend the license, answer requests and withdraw what the work earns.
+  </Step>
+</Steps>
+
+## After publishing
+
+- **Share the work page**, `/w/<id>`. Anyone can ask about a use there.
+- **Open your studio**, [/studio](/studio), with the same wallet. UNCLEAR requests wait there for your answer: yes,
+  no, or a price from one of your tiers. You can also grant an exception to a DENIED request.
+- **Amend the license** from the studio when the same question keeps coming back. Amending adds a new version with
+  its own hash; receipts already issued keep theirs.
+- **Withdraw** your balance from the studio. It leaves the contract in one top-level transfer to your wallet and
+  lands when the transaction finalizes.
+
+<Callout type="warn" title="Publish only what you may license">
+  Clearance cannot prove that you made the work. A receipt is only as good as the creator behind it, and every work
+  page has a report link.
+</Callout>
+
+## The same call from code
+
+`publish_work(title, link, license, tiers_json)`. The last argument is JSON: either a list of tiers, or an object
+that also carries your display name and the kind of work.
+
+```json
+{
+  "creator": "Nara Ito",
+  "kind": "illustration",
+  "tiers": [
+    { "id": "commercial", "name": "Commercial", "scope": "Commercial use online, videos, client work", "price": "40" },
+    { "id": "merch", "name": "Merch", "scope": "Printed goods up to 500 units", "price": "90" }
+  ]
+}
+```
+
+Prices are GEN as decimal strings, such as `"40"` or `"0.5"`; the contract stores them in wei. Kinds are
+`illustration`, `photo`, `music`, `video`, `font`, `dataset`, `code` and `other`. The full method list is in the
+[contract reference](/docs/reference/contract).

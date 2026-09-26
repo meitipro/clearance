@@ -1,0 +1,49 @@
+---
+title: Receipts and what they prove
+description: What a receipt contains, what it does not, and how to check one.
+---
+
+A receipt is the record that a use was cleared. Its number is the request's: request 42 has receipt `RC-0042`, and
+its page is `/r/RC-0042`.
+
+## When one is issued
+
+- At once, when the judge answers **FREE**.
+- On purchase, when the requester buys the tier of a **PAID** answer within seven days.
+- When the creator answers **FREE**, or when a creator's priced answer is bought. These are marked as the creator's
+  answer.
+
+## What it contains
+
+| Part | Why it matters |
+|---|---|
+| The use, word for word | The receipt covers that sentence and nothing larger. A small use cannot be stretched into a big one. |
+| The answer and the reason | The verdict validators agreed on and the leader's one-sentence reason. |
+| Tier, price paid, conditions | What was bought, and conditions such as credit. |
+| License version and digest | The exact text it was issued under, which later amendments do not touch. |
+| Holder | The address that asked, and the only one the receipt names. |
+| Transactions | The ask, the purchase and any creator answer, each on the explorer. |
+
+## What it does not prove
+
+- **Not legal advice.** It records the creator's own terms. It does not decide what copyright law allows.
+- **Not authorship.** Clearance cannot prove the creator on record made the work. A receipt is only as good as the
+  creator behind it; the work page shows their link and address.
+- **Not a larger use.** Lying about the use does not help: the receipt proves permission for the sentence it holds,
+  which makes it evidence against anything bigger.
+
+## Checking the digest yourself
+
+The digest is SHA3-256 of `{"license": <text>, "tiers": <tiers>}` serialised with sorted keys, no spaces and UTF-8,
+where the tiers are the stored list with prices in wei. In Python, with the output of `get_license`:
+
+```python
+import hashlib, json
+
+def digest(license_text: str, tiers: list) -> str:
+    canonical = json.dumps({"license": license_text, "tiers": tiers}, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
+    return hashlib.sha3_256(canonical.encode("utf-8")).hexdigest()
+```
+
+This is the contract's own `digest` function. For platforms that want the check as one call, see
+[Receipt check for platforms](/docs/reference/receipt-check).

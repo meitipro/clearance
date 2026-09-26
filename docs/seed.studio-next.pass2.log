@@ -1,0 +1,32 @@
+    -> PAID commercial  A thumbnail for a monetised YouTube video is explicitly listed as commercial use (monetised videos), which requires the commercial tier at 40 GEN.
+    -> PAID merch  Selling 200 printed T-shirts is printed merch, and the merch tier covers printed goods up to 500 units.
+    -> FREE   Using it as wallpaper on your own phone for yourself only is personal use, which the license allows for free with credit.
+    -> DENIED   The license explicitly prohibits AI training in any form, and no paid tier covers this use.
+    -> DENIED   Merch tier covers only up to 500 units; 2000 exceeds that limit and larger runs are excluded from all listed tiers.
+    -> FREE   License allows non‑commercial wallpaper use with credit
+    -> FREE   The license explicitly states that news and editorial use is free with credit.
+    -> PAID commercial  The proposed use is a paid Instagram ad, which falls under advertising and commercial use requiring the commercial tier.
+    -> FREE   The license explicitly allows use in your own streams, monetised or not, with credit in the description, and this use is a monetised Twitch stream with credit.
+    -> DENIED   The license explicitly says you may not resell the loops themselves or put them in a sample pack, and no paid tier offers permission for sample packs.
+    -> DENIED   The license explicitly states 'No AI training' and none of the paid tiers cover this use.
+    -> PAID commercial  An election campaign is a professional/public use that falls under commercial print use, which requires the commercial tier.
+    -> PAID app  Embedding the font files in a game requires the app tier according to the license.
+    -> FREE   The license explicitly allows use for teaching with a citation, and the proposed university course use matches that permission.
+    -> DENIED   The license explicitly states that redistributing the raw files is not allowed in any form.
+  ask 0x12c226eddb757b7ccae360235cf7233a682db770bce437ee517469ba46ee1990
+  ask-tidepool-cafe: ask ok  https://explorer-studio-dev.genlayer.com/tx/0x12c226eddb757b7ccae360235cf7233a682db770bce437ee517469ba46ee1990
+    -> UNCLEAR   The license specifies use in videos, podcasts, streams, ads, films, and games, but is silent regarding public performance in a physical space like a cafe.
+  ask 0xac3fdc6a9a70d585ca6ccd6ae3f3e50b756fdef46b5120802936664a5ea7ea42
+  ask-harbor-app: ask ok  https://explorer-studio-dev.genlayer.com/tx/0xac3fdc6a9a70d585ca6ccd6ae3f3e50b756fdef46b5120802936664a5ea7ea42
+    -> UNCLEAR   The license only clearly permits research and teaching with citation and says commercial analytics needs a paid tier, but it does not say whether a free public bus-arrivals app is allowed.
+  amend_license 0xad9ae70240527c05e39bae008ab898a93eb56a982b0b6a31246b8dbb3a96cc92
+  amend-fox: amend_license ok  https://explorer-studio-dev.genlayer.com/tx/0xad9ae70240527c05e39bae008ab898a93eb56a982b0b6a31246b8dbb3a96cc92
+  answer 0x5dc43596f187ec478c25c4e25b4b8343070e0e0b8b1def52eef81bc515e2e700
+  answer-fox-mugs: answer ok  https://explorer-studio-dev.genlayer.com/tx/0x5dc43596f187ec478c25c4e25b4b8343070e0e0b8b1def52eef81bc515e2e700
+  buy 0x1de6954be671538e39b1cc09c8c2b5ad23e63b44beeed30e9ca0fc72c161f9ad
+  buy-fox-mugs: buy ok  https://explorer-studio-dev.genlayer.com/tx/0x1de6954be671538e39b1cc09c8c2b5ad23e63b44beeed30e9ca0fc72c161f9ad
+  answer 0x019b9ba80e09dda617ce11f0930fad06c88a1c4c4a834086cec696cd9123510c
+  answer-tidepool-cafe: answer ok  https://explorer-studio-dev.genlayer.com/tx/0x019b9ba80e09dda617ce11f0930fad06c88a1c4c4a834086cec696cd9123510c
+  answer 0xb459589d96f06ee1b3bc61c5945c4da90a7b833ad2c898a0a8f5a62bbfd310f1
+  answer-harbor-app: answer ok  https://explorer-studio-dev.genlayer.com/tx/0xb459589d96f06ee1b3bc61c5945c4da90a7b833ad2c898a0a8f5a62bbfd310f1
+seed pass2 exit=0

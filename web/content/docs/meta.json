@@ -1,0 +1,15 @@
+{
+  "title": "Clearance docs",
+  "pages": [
+    "---Getting started---",
+    "index",
+    "quickstart",
+    "publish-your-first-work",
+    "---Concepts---",
+    "...concepts",
+    "---Reference---",
+    "...reference",
+    "---More---",
+    "...more"
+  ]
+}

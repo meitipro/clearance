@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Clearance: the site's mark. Violet #A78BFA on the dark ground, 4 px radius at 26 px scaled up. Everything that
+       matters sits inside the central circle, so a circular crop keeps it whole. -->
+  <rect width="512" height="512" fill="#0b0b0e"/>
+  <rect x="106" y="106" width="300" height="300" rx="46" fill="#a78bfa"/>
+  <path d="M318.6 181.8 A97 97 0 1 0 318.6 330.2" fill="none" stroke="#140c24" stroke-width="40" stroke-linecap="round"/>
+</svg>

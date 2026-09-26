@@ -1,0 +1,778 @@
+{
+  "contract": "0x0336dB3c42C1ee09504664d7eCa63ae90A606bDf",
+  "network": "studio-next",
+  "explorer": "https://explorer-studio-dev.genlayer.com",
+  "accounts": {
+    "seed_nara": "0x725244FB8155735230C6d9F84377aD25d1b47aAb",
+    "seed_sami": "0xf76F495A869F41D52389ff9Aa7962b2e8e230f21",
+    "seed_ilse": "0x50e6491E674eEeFeB6E18a771F31BAeC1b59F6D9",
+    "seed_oren": "0x279Db4FeB52F03FcE0B205D38E829cbE202e1e9F",
+    "seed_lena": "0xE20AE1bBD73728F3f79ceabF7f31650047e71dE7",
+    "seed_alice": "0x19EcC324FB7b0dDe9AB0B5bf24599d510B590368",
+    "seed_bob": "0x1cd05433e40dA8Ca46E23fA407e205a3d38520ac",
+    "seed_carol": "0x431240Af37806F25A12dD866A693D0e7B27dbdeF"
+  },
+  "steps": [
+    {
+      "key": "publish-fox",
+      "method": "publish_work",
+      "from": "0x725244FB8155735230C6d9F84377aD25d1b47aAb",
+      "args": [
+        "Fox in the Reeds",
+        "https://github.com/meitipro1/clearance/blob/main/docs/seed.md#fox-in-the-reeds",
+        "Free for personal use, with credit to Nara Ito. Any commercial use, including monetised videos and client work, needs the commercial tier. Printed merch needs the merch tier, up to 500 units, larger runs by request. No AI training, in any form.",
+        "{\"creator\": \"Nara Ito\", \"kind\": \"illustration\", \"tiers\": [{\"id\": \"commercial\", \"name\": \"Commercial\", \"scope\": \"Commercial use online, videos, client work\", \"price\": \"40\"}, {\"id\": \"merch\", \"name\": \"Merch\", \"scope\": \"Printed goods up to 500 units\", \"price\": \"90\"}]}"
+      ],
+      "value": "0",
+      "tx": "0x0662a45bb1d07639c4cabe4752de2adf88c1798eada7d804537c42095f712e7f",
+      "ok": true,
+      "status": "ACCEPTED",
+      "refusal": "",
+      "returned": 12,
+      "at": "2026-09-26T01:33:37Z"
+    },
+    {
+      "key": "publish-dune",
+      "method": "publish_work",
+      "from": "0xf76F495A869F41D52389ff9Aa7962b2e8e230f21",
+      "args": [
+        "Dune Sketches",
+        "https://github.com/meitipro1/clearance/blob/main/docs/seed.md#dune-sketches",
+        "Free for any non-commercial use, including wallpapers, school projects and personal blogs, with credit to Sami Rahal. News and editorial use is also free with credit. Advertising and any other commercial use needs the commercial tier.",
+        "{\"creator\": \"Sami Rahal\", \"kind\": \"photo\", \"tiers\": [{\"id\": \"commercial\", \"name\": \"Commercial\", \"scope\": \"Advertising, product pages and other commercial use\", \"price\": \"25\"}]}"
+      ],
+      "value": "0",
+      "tx": "0xdc66e649c833c5914b58ab0589c46d497de15a3aea76234d249c046fc2457a2f",
+      "ok": true,
+      "status": "ACCEPTED",
+      "refusal": "",
+      "returned": 13,
+      "at": "2026-09-26T01:33:45Z"
+    },
+    {
+      "key": "publish-tidepool",
+      "method": "publish_work",
+      "from": "0x50e6491E674eEeFeB6E18a771F31BAeC1b59F6D9",
+      "args": [
+        "Tidepool Loops",
+        "https://github.com/meitipro1/clearance/blob/main/docs/seed.md#tidepool-loops",
+        "Free to use in your own videos, podcasts and streams, monetised or not, with credit in the description. You may not resell the loops themselves or put them in a sample pack. No AI training. Ads, films and games made for a paying client need the sync tier.",
+        "{\"creator\": \"Ilse Varga\", \"kind\": \"music\", \"tiers\": [{\"id\": \"sync\", \"name\": \"Sync\", \"scope\": \"Ads, films and games made for a paying client\", \"price\": \"60\"}]}"
+      ],
+      "value": "0",
+      "tx": "0x4963d672759a625809e07bbbd0ca57fa5681b48ea9f1a97dfce0a89ec31c7a68",
+      "ok": true,
+      "status": "ACCEPTED",
+      "refusal": "",
+      "returned": 14,
+      "at": "2026-09-26T01:33:53Z"
+    },
+    {
+      "key": "publish-kestrel",
+      "method": "publish_work",
+      "from": "0x279Db4FeB52F03FcE0B205D38E829cbE202e1e9F",
+      "args": [
+        "Kestrel Type",
+        "https://github.com/meitipro1/clearance/blob/main/docs/seed.md#kestrel-type",
+        "Free for personal projects. Commercial web and print use needs the commercial tier. Embedding the font files in an app or a game needs the app tier.",
+        "{\"creator\": \"Oren Dahl\", \"kind\": \"font\", \"tiers\": [{\"id\": \"commercial\", \"name\": \"Commercial\", \"scope\": \"Commercial web and print use by one business\", \"price\": \"30\"}, {\"id\": \"app\", \"name\": \"App\", \"scope\": \"Embedding the font files in one app or game\", \"price\": \"80\"}]}"
+      ],
+      "value": "0",
+      "tx": "0xa2bdbfefa8ec9c4d0c9035be9e7aa56973698128d7847f1c9fece75968a284b8",
+      "ok": true,
+      "status": "ACCEPTED",
+      "refusal": "",
+      "returned": 15,
+      "at": "2026-09-26T01:34:01Z"
+    },
+    {
+      "key": "publish-harbor",
+      "method": "publish_work",
+      "from": "0xE20AE1bBD73728F3f79ceabF7f31650047e71dE7",
+      "args": [
+        "Harbor Transit Dataset",
+        "https://github.com/meitipro1/clearance/blob/main/docs/seed.md#harbor-transit-dataset",
+        "Free for research and teaching, with a citation. Commercial analytics needs the commercial tier. Redistributing the raw files is not allowed in any form.",
+        "{\"creator\": \"Lena Okafor\", \"kind\": \"dataset\", \"tiers\": [{\"id\": \"commercial\", \"name\": \"Commercial\", \"scope\": \"Commercial analytics and reports for one organisation\", \"price\": \"150\"}]}"
+      ],
+      "value": "0",
+      "tx": "0xfa1ea9ede7ed4678fd0f3e167e0f98f104f77616628da7c799e04dbe2682dd1b",
+      "ok": true,
+      "status": "ACCEPTED",
+      "refusal": "",
+      "returned": 16,
+      "at": "2026-09-26T01:34:13Z"
+    },
+    {
+      "key": "ask-fox-thumbnail",
+      "method": "ask",
+      "from": "0x19EcC324FB7b0dDe9AB0B5bf24599d510B590368",
+      "args": [
+        12,
+        "Thumbnail for a monetised YouTube video about wetland birds on my channel."
+      ],
+      "value": "0",
+      "tx": "0x25aa686c48bc6ce2fc4eba5ee342c8ebd94cd8d2cf0c0be5ba9357fec212815d",
+      "ok": true,
+      "status": "ACCEPTED",
+      "refusal": "",
+      "returned": 13,
+      "at": "2026-09-26T01:34:26Z",
+      "requester": "seed_alice",
+      "work": "fox"
+    },
+    {
+      "key": "ask-fox-shirts",
+      "method": "ask",
+      "from": "0x1cd05433e40dA8Ca46E23fA407e205a3d38520ac",
+      "args": [
+        12,
+        "Print the fox on 200 T-shirts for my band's autumn tour, sold at our shows."
+      ],
+      "value": "0",
+      "tx": "0xa512bcec663f94c4cc1ce520588fd79db24f6cfe8f1299237ee8cef59b9742e6",
+      "ok": true,
+      "status": "ACCEPTED",
+      "refusal": "",
+      "returned": 14,
+      "at": "2026-09-26T01:34:35Z",
+      "requester": "seed_bob",
+      "work": "fox"
+    },
+    {
+      "key": "ask-fox-wallpaper",
+      "method": "ask",
+      "from": "0x431240Af37806F25A12dD866A693D0e7B27dbdeF",
+      "args": [
+        12,
+        "Wallpaper on my own phone, for myself only."
+      ],
+      "value": "0",
+      "tx": "0x218415f7057beba812981d7c15e5f5cd0bf86e02bd23468afefd4898abb4a179",
+      "ok": true,
+      "status": "ACCEPTED",
+      "refusal": "",
+      "returned": 15,
+      "at": "2026-09-26T01:34:49Z",
+      "requester": "seed_carol",
+      "work": "fox"
+    },
+    {
+      "key": "ask-fox-training",
+      "method": "ask",
+      "from": "0x1cd05433e40dA8Ca46E23fA407e205a3d38520ac",
+      "args": [
+        12,
+        "Train a style model on the fox so it can draw new pictures in the same style."
+      ],
+      "value": "0",
+      "tx": "0x654be13fbd8dab5ebba443fcb7c25de92a77e578f6e80c0d56cda0f89e88e982",
+      "ok": true,
+      "status": "ACCEPTED",
+      "refusal": "",
+      "returned": 16,
+      "at": "2026-09-26T01:35:03Z",
+      "requester": "seed_bob",
+      "work": "fox"
+    },
+    {
+      "key": "ask-fox-mugs",
+      "method": "ask",
+      "from": "0x19EcC324FB7b0dDe9AB0B5bf24599d510B590368",
+      "args": [
+        12,
+        "2,000 printed mugs with the fox for a cafe chain's holiday campaign."
+      ],
+      "value": "0",
+      "tx": "0x53851f19e4f94761fdb0f053715a0a66e1cc09b29807cf36c75ba54c0d189933",
+      "ok": true,
+      "status": "ACCEPTED",
+      "refusal": "",
+      "returned": 17,
+      "at": "2026-09-26T01:35:22Z",
+      "requester": "seed_alice",
+      "work": "fox"
+    },
+    {
+      "key": "ask-dune-laptop",
+      "method": "ask",
+      "from": "0x431240Af37806F25A12dD866A693D0e7B27dbdeF",
+      "args": [
+        13,
+        "Wallpaper on my laptop, with credit to Sami Rahal."
+      ],
+      "value": "0",
+      "tx": "0x1058c678bd1a05946c6111f10ee5a6ac29f26cad8eca8fb1ca1e40191209e862",
+      "ok": true,
+      "status": "ACCEPTED",
+      "refusal": "",
+      "returned": 18,
+      "at": "2026-09-26T01:35:35Z",
+      "requester": "seed_carol",
+      "work": "dune"
+    },
+    {
+      "key": "ask-dune-news",
+      "method": "ask",
+      "from": "0x19EcC324FB7b0dDe9AB0B5bf24599d510B590368",
+      "args": [
+        13,
+        "Photo for a local newspaper's story about the dunes, credited to Sami Rahal."
+      ],
+      "value": "0",
+      "tx": "0xab43b023fd5fa8b9141154d6a12340a14b7d721443e11c452021a308e691383d",
+      "ok": true,
+      "status": "ACCEPTED",
+      "refusal": "",
+      "returned": 19,
+      "at": "2026-09-26T01:35:49Z",
+      "requester": "seed_alice",
+      "work": "dune"
+    },
+    {
+      "key": "ask-dune-ad",
+      "method": "ask",
+      "from": "0x1cd05433e40dA8Ca46E23fA407e205a3d38520ac",
+      "args": [
+        13,
+        "Background of a paid Instagram ad for our surf shop."
+      ],
+      "value": "0",
+      "tx": "0xfc66ec42715469600e8a93c7601db35d705740e6a5964b58828d8fc9eb9ac28e",
+      "ok": true,
+      "status": "ACCEPTED",
+      "refusal": "",
+      "returned": 20,
+      "at": "2026-09-26T01:36:03Z",
+      "requester": "seed_bob",
+      "work": "dune"
+    },
+    {
+      "key": "ask-tidepool-stream",
+      "method": "ask",
+      "from": "0x431240Af37806F25A12dD866A693D0e7B27dbdeF",
+      "args": [
+        14,
+        "Background music for my monetised Twitch streams, credited in the description."
+      ],
+      "value": "0",
+      "tx": "0x9276279d6bbfb857b68b234b18ca51115fd1691bffa127061ba18ac7ad183f63",
+      "ok": true,
+      "status": "ACCEPTED",
+      "refusal": "",
+      "returned": 21,
+      "at": "2026-09-26T01:36:16Z",
+      "requester": "seed_carol",
+      "work": "tidepool"
+    },
+    {
+      "key": "ask-tidepool-pack",
+      "method": "ask",
+      "from": "0x1cd05433e40dA8Ca46E23fA407e205a3d38520ac",
+      "args": [
+        14,
+        "Put the loops in a sample pack that I sell on my website."
+      ],
+      "value": "0",
+      "tx": "0xe071efc129639a65dfbaef812988f8a4e229f15a1d42206f4a8c07ec345548b8",
+      "ok": true,
+      "status": "ACCEPTED",
+      "refusal": "",
+      "returned": 22,
+      "at": "2026-09-26T01:36:31Z",
+      "requester": "seed_bob",
+      "work": "tidepool"
+    },
+    {
+      "key": "ask-tidepool-training",
+      "method": "ask",
+      "from": "0x19EcC324FB7b0dDe9AB0B5bf24599d510B590368",
+      "args": [
+        14,
+        "Train a music generation model on the loops."
+      ],
+      "value": "0",
+      "tx": "0x279d531809a49e5e867ead0c6057eec297423a2d83d7dccb63e7e064d8650a21",
+      "ok": true,
+      "status": "ACCEPTED",
+      "refusal": "",
+      "returned": 23,
+      "at": "2026-09-26T01:36:39Z",
+      "requester": "seed_alice",
+      "work": "tidepool"
+    },
+    {
+      "key": "ask-kestrel-campaign",
+      "method": "ask",
+      "from": "0x431240Af37806F25A12dD866A693D0e7B27dbdeF",
+      "args": [
+        15,
+        "Headline font on the posters for a city council candidate's election campaign."
+      ],
+      "value": "0",
+      "tx": "0x45a74cdcec8028b81fb33f61749da1927184254d5119e0c13cf682c93a0b10ac",
+      "ok": true,
+      "status": "ACCEPTED",
+      "refusal": "",
+      "returned": 24,
+      "at": "2026-09-26T01:37:10Z",
+      "requester": "seed_carol",
+      "work": "kestrel"
+    },
+    {
+      "key": "ask-kestrel-game",
+      "method": "ask",
+      "from": "0x1cd05433e40dA8Ca46E23fA407e205a3d38520ac",
+      "args": [
+        15,
+        "Embed the font files in my indie mobile game, sold on the app stores."
+      ],
+      "value": "0",
+      "tx": "0x7542f76e0ec4fe916ab2607505a69a1dca0c685742fbf4196afac10243a6bbda",
+      "ok": true,
+      "status": "ACCEPTED",
+      "refusal": "",
+      "returned": 25,
+      "at": "2026-09-26T01:37:24Z",
+      "requester": "seed_bob",
+      "work": "kestrel"
+    },
+    {
+      "key": "ask-harbor-course",
+      "method": "ask",
+      "from": "0x19EcC324FB7b0dDe9AB0B5bf24599d510B590368",
+      "args": [
+        16,
+        "Use the dataset in a university course on urban planning, cited in the slides."
+      ],
+      "value": "0",
+      "tx": "0x13c15d2ef8e081b475442e8b5842f607a4ac624e13e42b517751c0af75887afc",
+      "ok": true,
+      "status": "ACCEPTED",
+      "refusal": "",
+      "returned": 26,
+      "at": "2026-09-26T01:37:39Z",
+      "requester": "seed_alice",
+      "work": "harbor"
+    },
+    {
+      "key": "ask-harbor-mirror",
+      "method": "ask",
+      "from": "0x431240Af37806F25A12dD866A693D0e7B27dbdeF",
+      "args": [
+        16,
+        "Publish a full mirror of the raw files on my own website."
+      ],
+      "value": "0",
+      "tx": "0x07ef4746cba04945daed907db347e4a8bc7f75ffa135e952a352af5670bc67c1",
+      "ok": true,
+      "status": "ACCEPTED",
+      "refusal": "",
+      "returned": 27,
+      "at": "2026-09-26T01:37:54Z",
+      "requester": "seed_carol",
+      "work": "harbor"
+    },
+    {
+      "key": "buy-fox-thumbnail",
+      "method": "buy",
+      "from": "0x19EcC324FB7b0dDe9AB0B5bf24599d510B590368",
+      "args": [
+        13
+      ],
+      "value": "40000000000000000000",
+      "tx": "0x58c94c9b886a187adee9b7aee32df680c59a904d7bf33d8892811895b3c98258",
+      "ok": true,
+      "status": "ACCEPTED",
+      "refusal": "",
+      "returned": 13,
+      "at": "2026-09-26T01:38:02Z",
+      "request": "fox-thumbnail"
+    },
+    {
+      "key": "buy-fox-shirts",
+      "method": "buy",
+      "from": "0x1cd05433e40dA8Ca46E23fA407e205a3d38520ac",
+      "args": [
+        14
+      ],
+      "value": "90000000000000000000",
+      "tx": "0xd969105a698a03367e39ab3a4852edb1e89d273a6c61e7e76603dc6637118330",
+      "ok": true,
+      "status": "ACCEPTED",
+      "refusal": "",
+      "returned": 14,
+      "at": "2026-09-26T01:38:16Z",
+      "request": "fox-shirts"
+    },
+    {
+      "key": "buy-dune-ad",
+      "method": "buy",
+      "from": "0x1cd05433e40dA8Ca46E23fA407e205a3d38520ac",
+      "args": [
+        20
+      ],
+      "value": "25000000000000000000",
+      "tx": "0xbaf4ffa55678b650084784d29e08cd93793a9b133e67071ad237e44150776c1f",
+      "ok": true,
+      "status": "ACCEPTED",
+      "refusal": "",
+      "returned": 20,
+      "at": "2026-09-26T01:38:24Z",
+      "request": "dune-ad"
+    },
+    {
+      "key": "buy-kestrel-campaign",
+      "method": "buy",
+      "from": "0x431240Af37806F25A12dD866A693D0e7B27dbdeF",
+      "args": [
+        24
+      ],
+      "value": "30000000000000000000",
+      "tx": "0x787b954567c6064656bc7334729eb766ca8426466ef007ef28c96f0d2ca2141c",
+      "ok": true,
+      "status": "ACCEPTED",
+      "refusal": "",
+      "returned": 24,
+      "at": "2026-09-26T01:38:31Z",
+      "request": "kestrel-campaign"
+    },
+    {
+      "key": "buy-kestrel-game",
+      "method": "buy",
+      "from": "0x1cd05433e40dA8Ca46E23fA407e205a3d38520ac",
+      "args": [
+        25
+      ],
+      "value": "80000000000000000000",
+      "tx": "0x9a4d0067516e51ffbeb5fee661ef3e3aae87c2832f04543deea29ef550f37fb1",
+      "ok": true,
+      "status": "ACCEPTED",
+      "refusal": "",
+      "returned": 25,
+      "at": "2026-09-26T01:38:39Z",
+      "request": "kestrel-game"
+    },
+    {
+      "key": "answer-harbor-mirror",
+      "method": "answer",
+      "from": "0xE20AE1bBD73728F3f79ceabF7f31650047e71dE7",
+      "args": [
+        27,
+        "FREE",
+        ""
+      ],
+      "value": "0",
+      "tx": "0x307de1e72ac8bb7600ddb203c0ade246fa4e8e7b66d8b8e7adc9046d086b6c41",
+      "ok": true,
+      "status": "ACCEPTED",
+      "refusal": "",
+      "returned": 27,
+      "at": "2026-09-26T01:38:47Z",
+      "request": "harbor-mirror"
+    },
+    {
+      "key": "withdraw-nara",
+      "method": "withdraw",
+      "from": "0x725244FB8155735230C6d9F84377aD25d1b47aAb",
+      "args": [],
+      "value": "0",
+      "tx": "0x3a18d0b471733b551ca2ce6bee49f70d8dbd4ce6bb10aa39095dbc15a411b53d",
+      "ok": true,
+      "status": "ACCEPTED",
+      "refusal": "",
+      "returned": 130000000000000000000,
+      "at": "2026-09-26T01:38:57Z",
+      "balance_before": "999999921361499997177",
+      "owed": "130000000000000000000",
+      "final_status": "FINALIZED",
+      "balance_after_final": "1129999795056249994354"
+    },
+    {
+      "key": "ask-tidepool-cafe",
+      "method": "ask",
+      "from": "0x19EcC324FB7b0dDe9AB0B5bf24599d510B590368",
+      "args": [
+        14,
+        "Play the loops as background music in my cafe during opening hours."
+      ],
+      "value": "0",
+      "tx": "0x12c226eddb757b7ccae360235cf7233a682db770bce437ee517469ba46ee1990",
+      "ok": true,
+      "status": "ACCEPTED",
+      "refusal": "",
+      "returned": 28,
+      "at": "2026-09-26T01:40:48Z",
+      "requester": "seed_alice",
+      "work": "tidepool"
+    },
+    {
+      "key": "ask-harbor-app",
+      "method": "ask",
+      "from": "0x1cd05433e40dA8Ca46E23fA407e205a3d38520ac",
+      "args": [
+        16,
+        "Build a free public app that shows our town's bus arrivals, using the dataset."
+      ],
+      "value": "0",
+      "tx": "0xac3fdc6a9a70d585ca6ccd6ae3f3e50b756fdef46b5120802936664a5ea7ea42",
+      "ok": true,
+      "status": "ACCEPTED",
+      "refusal": "",
+      "returned": 29,
+      "at": "2026-09-26T01:41:02Z",
+      "requester": "seed_bob",
+      "work": "harbor"
+    },
+    {
+      "key": "amend-fox",
+      "method": "amend_license",
+      "from": "0x725244FB8155735230C6d9F84377aD25d1b47aAb",
+      "args": [
+        12,
+        "Free for personal use, with credit to Nara Ito. Any commercial use, including monetised videos and client work, needs the commercial tier. Printed merch needs the merch tier, up to 500 units, larger runs need the large-run tier, up to 5,000 units. No AI training, in any form.",
+        "[{\"id\": \"commercial\", \"name\": \"Commercial\", \"scope\": \"Commercial use online, videos, client work\", \"price\": \"40\"}, {\"id\": \"merch\", \"name\": \"Merch\", \"scope\": \"Printed goods up to 500 units\", \"price\": \"90\"}, {\"id\": \"large-run\", \"name\": \"Large run\", \"scope\": \"Printed goods over 500 units, up to 5,000\", \"price\": \"300\"}]"
+      ],
+      "value": "0",
+      "tx": "0xad9ae70240527c05e39bae008ab898a93eb56a982b0b6a31246b8dbb3a96cc92",
+      "ok": true,
+      "status": "ACCEPTED",
+      "refusal": "",
+      "returned": 2,
+      "at": "2026-09-26T01:41:11Z"
+    },
+    {
+      "key": "answer-fox-mugs",
+      "method": "answer",
+      "from": "0x725244FB8155735230C6d9F84377aD25d1b47aAb",
+      "args": [
+        17,
+        "PAID",
+        "large-run"
+      ],
+      "value": "0",
+      "tx": "0x5dc43596f187ec478c25c4e25b4b8343070e0e0b8b1def52eef81bc515e2e700",
+      "ok": true,
+      "status": "ACCEPTED",
+      "refusal": "",
+      "returned": 17,
+      "at": "2026-09-26T01:41:18Z",
+      "request": "fox-mugs"
+    },
+    {
+      "key": "buy-fox-mugs",
+      "method": "buy",
+      "from": "0x19EcC324FB7b0dDe9AB0B5bf24599d510B590368",
+      "args": [
+        17
+      ],
+      "value": "300000000000000000000",
+      "tx": "0x1de6954be671538e39b1cc09c8c2b5ad23e63b44beeed30e9ca0fc72c161f9ad",
+      "ok": true,
+      "status": "ACCEPTED",
+      "refusal": "",
+      "returned": 17,
+      "at": "2026-09-26T01:41:26Z",
+      "request": "fox-mugs"
+    },
+    {
+      "key": "answer-tidepool-cafe",
+      "method": "answer",
+      "from": "0x50e6491E674eEeFeB6E18a771F31BAeC1b59F6D9",
+      "args": [
+        28,
+        "FREE",
+        ""
+      ],
+      "value": "0",
+      "tx": "0x019b9ba80e09dda617ce11f0930fad06c88a1c4c4a834086cec696cd9123510c",
+      "ok": true,
+      "status": "ACCEPTED",
+      "refusal": "",
+      "returned": 28,
+      "at": "2026-09-26T01:41:34Z",
+      "request": "tidepool-cafe"
+    },
+    {
+      "key": "answer-harbor-app",
+      "method": "answer",
+      "from": "0xE20AE1bBD73728F3f79ceabF7f31650047e71dE7",
+      "args": [
+        29,
+        "DENIED",
+        ""
+      ],
+      "value": "0",
+      "tx": "0xb459589d96f06ee1b3bc61c5945c4da90a7b833ad2c898a0a8f5a62bbfd310f1",
+      "ok": true,
+      "status": "ACCEPTED",
+      "refusal": "",
+      "returned": 29,
+      "at": "2026-09-26T01:41:41Z",
+      "request": "harbor-app"
+    }
+  ],
+  "work_ids": {
+    "fox": 12,
+    "dune": 13,
+    "tidepool": 14,
+    "kestrel": 15,
+    "harbor": 16
+  },
+  "requests": {
+    "fox-thumbnail": {
+      "request_id": 13,
+      "verdict": "PAID",
+      "tier": "commercial",
+      "reason": "A thumbnail for a monetised YouTube video is explicitly listed as commercial use (monetised videos), which requires the commercial tier at 40 GEN.",
+      "conditions": "",
+      "price": "40000000000000000000",
+      "requester": "seed_alice"
+    },
+    "fox-shirts": {
+      "request_id": 14,
+      "verdict": "PAID",
+      "tier": "merch",
+      "reason": "Selling 200 printed T-shirts is printed merch, and the merch tier covers printed goods up to 500 units.",
+      "conditions": "",
+      "price": "90000000000000000000",
+      "requester": "seed_bob"
+    },
+    "fox-wallpaper": {
+      "request_id": 15,
+      "verdict": "FREE",
+      "tier": "",
+      "reason": "Using it as wallpaper on your own phone for yourself only is personal use, which the license allows for free with credit.",
+      "conditions": "Personal use only; credit to Nara Ito.",
+      "price": "0",
+      "requester": "seed_carol"
+    },
+    "fox-training": {
+      "request_id": 16,
+      "verdict": "DENIED",
+      "tier": "",
+      "reason": "The license explicitly prohibits AI training in any form, and no paid tier covers this use.",
+      "conditions": "",
+      "price": "0",
+      "requester": "seed_bob"
+    },
+    "fox-mugs": {
+      "request_id": 17,
+      "verdict": "DENIED",
+      "tier": "",
+      "reason": "Merch tier covers only up to 500 units; 2000 exceeds that limit and larger runs are excluded from all listed tiers.",
+      "conditions": "",
+      "price": "0",
+      "requester": "seed_alice"
+    },
+    "dune-laptop": {
+      "request_id": 18,
+      "verdict": "FREE",
+      "tier": "",
+      "reason": "License allows non‑commercial wallpaper use with credit",
+      "conditions": "must give credit to Sami Rahal",
+      "price": "0",
+      "requester": "seed_carol"
+    },
+    "dune-news": {
+      "request_id": 19,
+      "verdict": "FREE",
+      "tier": "",
+      "reason": "The license explicitly states that news and editorial use is free with credit.",
+      "conditions": "Credit to Sami Rahal",
+      "price": "0",
+      "requester": "seed_alice"
+    },
+    "dune-ad": {
+      "request_id": 20,
+      "verdict": "PAID",
+      "tier": "commercial",
+      "reason": "The proposed use is a paid Instagram ad, which falls under advertising and commercial use requiring the commercial tier.",
+      "conditions": "",
+      "price": "25000000000000000000",
+      "requester": "seed_bob"
+    },
+    "tidepool-stream": {
+      "request_id": 21,
+      "verdict": "FREE",
+      "tier": "",
+      "reason": "The license explicitly allows use in your own streams, monetised or not, with credit in the description, and this use is a monetised Twitch stream with credit.",
+      "conditions": "Credit in the description.",
+      "price": "0",
+      "requester": "seed_carol"
+    },
+    "tidepool-pack": {
+      "request_id": 22,
+      "verdict": "DENIED",
+      "tier": "",
+      "reason": "The license explicitly says you may not resell the loops themselves or put them in a sample pack, and no paid tier offers permission for sample packs.",
+      "conditions": "",
+      "price": "0",
+      "requester": "seed_bob"
+    },
+    "tidepool-training": {
+      "request_id": 23,
+      "verdict": "DENIED",
+      "tier": "",
+      "reason": "The license explicitly states 'No AI training' and none of the paid tiers cover this use.",
+      "conditions": "",
+      "price": "0",
+      "requester": "seed_alice"
+    },
+    "kestrel-campaign": {
+      "request_id": 24,
+      "verdict": "PAID",
+      "tier": "commercial",
+      "reason": "An election campaign is a professional/public use that falls under commercial print use, which requires the commercial tier.",
+      "conditions": "",
+      "price": "30000000000000000000",
+      "requester": "seed_carol"
+    },
+    "kestrel-game": {
+      "request_id": 25,
+      "verdict": "PAID",
+      "tier": "app",
+      "reason": "Embedding the font files in a game requires the app tier according to the license.",
+      "conditions": "",
+      "price": "80000000000000000000",
+      "requester": "seed_bob"
+    },
+    "harbor-course": {
+      "request_id": 26,
+      "verdict": "FREE",
+      "tier": "",
+      "reason": "The license explicitly allows use for teaching with a citation, and the proposed university course use matches that permission.",
+      "conditions": "Citation required.",
+      "price": "0",
+      "requester": "seed_alice"
+    },
+    "harbor-mirror": {
+      "request_id": 27,
+      "verdict": "DENIED",
+      "tier": "",
+      "reason": "The license explicitly states that redistributing the raw files is not allowed in any form.",
+      "conditions": "",
+      "price": "0",
+      "requester": "seed_carol"
+    },
+    "tidepool-cafe": {
+      "request_id": 28,
+      "verdict": "UNCLEAR",
+      "tier": "",
+      "reason": "The license specifies use in videos, podcasts, streams, ads, films, and games, but is silent regarding public performance in a physical space like a cafe.",
+      "conditions": "",
+      "price": "0",
+      "requester": "seed_alice"
+    },
+    "harbor-app": {
+      "request_id": 29,
+      "verdict": "UNCLEAR",
+      "tier": "",
+      "reason": "The license only clearly permits research and teaching with citation and says commercial analytics needs a paid tier, but it does not say whether a free public bus-arrivals app is allowed.",
+      "conditions": "",
+      "price": "0",
+      "requester": "seed_bob"
+    }
+  },
+  "finished_at": "2026-09-26T01:41:41Z"
+}

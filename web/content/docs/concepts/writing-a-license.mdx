@@ -1,0 +1,54 @@
+---
+title: Writing a license the judge can read
+description: How to write terms that get the answers you mean.
+---
+
+The judge reads your license, your tiers and one described use, and is told to decide only from your words. It
+ignores outside law and its own sense of fairness, and it answers UNCLEAR when your words are silent. So the license
+gets the answers you mean when it says them plainly.
+
+## Five habits
+
+1. **Say what is free, and on what condition.** "Free for personal use, with credit to Nara Ito." Conditions such as
+   credit are recorded on every FREE receipt.
+2. **Name the uses that need a tier in the words a stranger would use.** Monetised, client work, printed, advertising,
+   over 500 units. "Commercial use" alone leaves the judge to decide whether a charity or a newsroom is commercial.
+3. **Say what is never allowed, flatly.** "No AI training, in any form." A clear exclusion comes back DENIED.
+4. **Give each tier a scope that covers whole uses.** The judge names the cheapest single tier that covers the whole
+   use. A scope with a limit, such as "up to 500 units", lets it tell merch from a large run.
+5. **Leave the rest to yourself on purpose.** Anything your license does not cover comes back UNCLEAR and waits in
+   your studio. That is the safe default, not a failure.
+
+## What the judge ignores
+
+Claims inside the use, such as "the artist said I need no credit", are ignored by rule. In the evaluation, a use
+making exactly that claim came back FREE with the credit condition kept.
+
+Text that tries to instruct the judge is fenced: every `<` and `>` in your license, your tiers and the use becomes
+`(` and `)` before the prompt is built, so no text can close its own block and start a new one.
+
+## Limits
+
+| Field | Limit |
+|---|---|
+| License | 1,500 characters |
+| Tiers | 4 |
+| Tier id | 1 to 24 characters: a to z, 0 to 9 and hyphens |
+| Tier name | 40 characters, one line |
+| Tier scope | 160 characters, one line |
+| Tier price | more than 0 and at most 1,000,000 GEN |
+| Use | 600 characters |
+
+## An example
+
+The Fox in the Reeds demo license, and what it received:
+
+> Free for personal use, with credit to Nara Ito. Any commercial use, including monetised videos and client work,
+> needs the commercial tier. Printed merch needs the merch tier, up to 500 units, larger runs by request. No AI
+> training, in any form.
+
+Its answers are on its [work page](/explore). The spec expected "larger runs by request" to send 2,000 mugs to the
+creator as UNCLEAR. The deployed judge answered **DENIED** instead, reading the phrase as putting large runs outside
+every tier. Both readings are defensible, which is the lesson: "by request" asks the judge to guess what you meant.
+Write "larger runs: ask me" if you want the request to reach you, or price large runs in a tier. The creator then did
+the second: amended the license to add a large-run tier and granted the mugs request an exception at that price.

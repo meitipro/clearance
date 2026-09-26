@@ -1,0 +1,79 @@
+---
+title: Receipt check for platforms
+description: Check from your own app whether a receipt exists, who holds it and exactly what it covers.
+---
+
+A platform handling a takedown dispute needs three answers: does this receipt exist, does the person in front of me
+hold it, and what use does it cover. All three are one free read, `get_request`, plus `get_license` for the text it
+was issued under. No wallet, no key and no fee.
+
+<Callout title="Compare the use yourself">
+  A receipt covers the use written on it, word for word, and nothing larger. The check returns that sentence; decide
+  whether the use in dispute is the same use. Clearance does not judge that comparison for you.
+</Callout>
+
+## The check
+
+This is `web/examples/check-receipt.mjs`, run as written:
+
+{/* include: examples/check-receipt.mjs */}
+```js title="examples/check-receipt.mjs"
+// Receipt check for platforms: does receipt RC-n exist, who holds it, and what exactly does it cover?
+//   node examples/check-receipt.mjs RC-0002 0xHolderAddress
+import { createClient } from "genlayer-js";
+import { studioDevnet } from "genlayer-js/chains";
+
+const CLEARANCE = "0x0336dB3c42C1ee09504664d7eCa63ae90A606bDf";
+const chain = { ...studioDevnet, rpcUrls: { default: { http: ["https://studio-next.genlayer.com/api"] } } };
+const client = createClient({ chain });
+
+async function view(functionName, args) {
+  return JSON.parse(await client.readContract({ address: CLEARANCE, functionName, args }));
+}
+
+export async function checkReceipt(receipt, holder) {
+  const id = Number(String(receipt).replace(/^rc-?0*/i, ""));
+  const r = await view("get_request", [id]);
+  if (!r.found || !r.receipt) return { valid: false, why: "no receipt with this number" };
+  if (holder && r.holder.toLowerCase() !== holder.toLowerCase()) return { valid: false, why: "held by another account" };
+  // The license text the receipt was issued under, and its hash, for the record.
+  const license = await view("get_license", [r.work_id, r.version]);
+  return {
+    valid: true,
+    work: r.title,
+    holder: r.holder,
+    use: r.use, // the receipt covers this sentence and nothing larger
+    answer: r.decision || r.verdict,
+    tier: r.offer_tier || r.tier,
+    conditions: r.conditions,
+    paid: r.paid,
+    version: r.version,
+    digest: license.digest,
+    by: r.receipt_kind, // JUDGE or CREATOR
+  };
+}
+
+console.log(await checkReceipt(process.argv[2] ?? "RC-0001", process.argv[3]));
+```
+{/* end include */}
+
+A receipt is valid when `get_request` answers `found: true` and `receipt: true`. The fields that matter:
+
+| Field | Meaning |
+|---|---|
+| `holder` | The address the receipt names: the account that asked. |
+| `use` | The use it covers, exactly as asked. |
+| `verdict`, `decision` | The judge's answer, and the creator's if they gave one. A creator's answer wins. |
+| `tier`, `offer_tier` | The judge's tier, and the tier of a creator's priced answer. |
+| `paid` | What was paid, in wei. |
+| `version`, `digest` | The license version it is pinned to and that version's SHA3-256. |
+| `receipt_kind` | `JUDGE` or `CREATOR`: who issued it. |
+
+## From the web page
+
+Every receipt also has a public page, `/r/RC-0042`, readable by anyone. It shows the same fields, the license version
+link and the transactions on the explorer.
+
+## Contract address
+
+The contract, network and RPC are on [Addresses and network](/docs/reference/addresses).

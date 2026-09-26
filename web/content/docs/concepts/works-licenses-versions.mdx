@@ -1,0 +1,43 @@
+---
+title: Works, licenses and versions
+description: What a work is on chain, and why a license version is never overwritten.
+---
+
+## A work
+
+A work is a row in the contract: a title, a link, the creator's display name, a kind, and the address that published
+it. That address is the **creator on record**. It is the only account that may amend the license, answer requests or
+withdraw the work's earnings, and the contract checks it on every one of those writes.
+
+The contract does not store the work itself. Files stay wherever the creator hosts them; Clearance licenses their use.
+
+## A license version
+
+Each work has one or more license versions. A version holds:
+
+| Field | What it is |
+|---|---|
+| License | The creator's own words, at most 1,500 characters, exactly as written. |
+| Tiers | Up to four, each an id, a name, a one-line scope and a price in wei. |
+| Digest | SHA3-256 of the license and its tiers in one canonical JSON form. |
+| Created | The transaction time it was written. |
+
+`publish_work` writes version 1. `amend_license` writes the next one. **No version is ever overwritten**: the
+contract stores each under its own key, `work_id:version`, and `get_license(work_id, version)` reads any of them.
+
+## Why versions matter
+
+Every request is judged against the latest version at the moment it is asked, and records that version number. The
+receipt is pinned to it. So:
+
+- A creator who tightens the license after selling a tier cannot change what the receipt covers. The receipt links
+  to the version it was issued under, and the digest proves which text that was.
+- A PAID answer keeps the price it was given for seven days, even if the tier's price changes in a later version.
+- New requests read the new version, so amending the license is how a creator makes a recurring UNCLEAR question
+  answer itself next time.
+
+## What is stored for a request
+
+The requester's address, the use word for word (at most 600 characters), the version, the judge's verdict and tier,
+the price, the leader's conditions and one-sentence reason, and, if they answered, the creator's decision, who gave
+it and when. See [The four answers](/docs/concepts/four-answers).

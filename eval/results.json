@@ -1,0 +1,310 @@
+{
+  "attempts": [
+    {
+      "case": "1",
+      "attempt": 1,
+      "held_out": false,
+      "work_id": 1,
+      "expected": {
+        "verdict": "FREE",
+        "tier": ""
+      },
+      "tx": "0x86dfb67f1750e947fcebd423fef0f28a919bcb2d1454711bb7805abc8e0eeba6",
+      "sent_at": "2026-09-26T01:08:50Z",
+      "consensus": "decided",
+      "request_id": 1,
+      "verdict": "FREE",
+      "tier": "",
+      "conditions": "credit to Mira Sol",
+      "reason": "License explicitly permits personal use (non-commercial, self-only) with credit.",
+      "version": 1,
+      "status": "CLEARED"
+    },
+    {
+      "case": "2",
+      "attempt": 1,
+      "held_out": false,
+      "work_id": 1,
+      "expected": {
+        "verdict": "PAID",
+        "tier": "commercial"
+      },
+      "tx": "0xdd384bc016c3fdc121bdc1e1d0823c9680ad757d882bbc1cfd12325ba52a9ba3",
+      "sent_at": "2026-09-26T01:09:13Z",
+      "consensus": "decided",
+      "request_id": 2,
+      "verdict": "PAID",
+      "tier": "commercial",
+      "conditions": "",
+      "reason": "A thumbnail for a monetised YouTube video is commercial use, and the license says monetised videos need the commercial tier.",
+      "version": 1,
+      "status": "OFFER"
+    },
+    {
+      "case": "3",
+      "attempt": 1,
+      "held_out": false,
+      "work_id": 2,
+      "expected": {
+        "verdict": "DENIED",
+        "tier": ""
+      },
+      "tx": "0x2872a1d40270ee52b1658616a793434c50cd1997391aac9bb4d2844b90af254e",
+      "sent_at": "2026-09-26T01:09:35Z",
+      "consensus": "decided",
+      "request_id": 3,
+      "verdict": "DENIED",
+      "tier": "",
+      "conditions": "",
+      "reason": "The license explicitly prohibits using the work to fine-tune any machine learning model.",
+      "version": 1,
+      "status": "DENIED"
+    },
+    {
+      "case": "4",
+      "attempt": 1,
+      "held_out": false,
+      "work_id": 3,
+      "expected": {
+        "verdict": "FREE",
+        "tier": ""
+      },
+      "tx": "0x660d9e470ccb200221f85c2ad76032d65311d39587a1188cfc8f0b321e1f1f1f",
+      "sent_at": "2026-09-26T01:10:07Z",
+      "consensus": "decided",
+      "request_id": 4,
+      "verdict": "FREE",
+      "tier": "",
+      "conditions": "Only for registered non-profits and charities, and only for their own activities.",
+      "reason": "The license says registered non-profits and charities may use the work free for any of their own activities, and a charity's bake sale poster fits that.",
+      "version": 1,
+      "status": "CLEARED"
+    },
+    {
+      "case": "5",
+      "attempt": 1,
+      "held_out": false,
+      "work_id": 4,
+      "expected": {
+        "verdict": "PAID",
+        "tier": "merch"
+      },
+      "tx": "0xfd52a6e1e08504aab30d9a768a094581faa2a3d1b81911c4036245093e626322",
+      "sent_at": "2026-09-26T01:10:35Z",
+      "consensus": "decided",
+      "request_id": 5,
+      "verdict": "PAID",
+      "tier": "merch",
+      "conditions": "",
+      "reason": "Printed merchandise requires the merch tier and 200 T‑shirts are within its 500‑unit limit.",
+      "version": 1,
+      "status": "OFFER"
+    },
+    {
+      "case": "6",
+      "attempt": 1,
+      "held_out": false,
+      "work_id": 5,
+      "expected": {
+        "verdict": "DENIED",
+        "tier": ""
+      },
+      "tx": "0x1c8bb0c609a2ae5405933f9f2441899d58dc6ddd3f83075998b83cf9b2a6167a",
+      "sent_at": "2026-09-26T01:10:57Z",
+      "consensus": "decided",
+      "request_id": 6,
+      "verdict": "DENIED",
+      "tier": "",
+      "conditions": "",
+      "reason": "The license explicitly prohibits use in anything that is sold or monetised, and a paid mobile game sold on the App Store falls directly under that prohibition.",
+      "version": 1,
+      "status": "DENIED"
+    },
+    {
+      "case": "7",
+      "attempt": 1,
+      "held_out": false,
+      "work_id": 6,
+      "expected": {
+        "verdict": "UNCLEAR",
+        "tier": ""
+      },
+      "tx": "0x89e9eeb4a986c9e895d8f58bb9597616f240a617017e23965d1968f98ac0fc57",
+      "sent_at": "2026-09-26T01:11:25Z",
+      "consensus": "decided",
+      "request_id": 7,
+      "verdict": "UNCLEAR",
+      "tier": "",
+      "conditions": "",
+      "reason": "The license says personal use is free and commercial use requires contacting the creator to agree terms, but it provides no paid tier or definite permission for this commercial logo use.",
+      "version": 1,
+      "status": "WAITING"
+    },
+    {
+      "case": "8",
+      "attempt": 1,
+      "held_out": false,
+      "work_id": 7,
+      "expected": {
+        "verdict": "FREE",
+        "tier": ""
+      },
+      "tx": "0x04df26043576a0fb4a2da2266174e27839f7e83d7990b5c1dee389431aef5791",
+      "sent_at": "2026-09-26T01:11:47Z",
+      "consensus": "decided",
+      "request_id": 8,
+      "verdict": "FREE",
+      "tier": "",
+      "conditions": "Credit Juno Park by name next to the work.",
+      "reason": "The license allows any use, including a personal blog header image, as long as Juno Park is credited by name next to the work.",
+      "version": 1,
+      "status": "CLEARED"
+    },
+    {
+      "case": "9",
+      "attempt": 1,
+      "held_out": false,
+      "work_id": 8,
+      "expected": {
+        "verdict": "DENIED",
+        "tier": ""
+      },
+      "tx": "0x0f326050dd44c1e99ef14278c63ecc4cd9f81ff627faa3b7068091629b0672f8",
+      "sent_at": "2026-09-26T01:12:20Z",
+      "consensus": "decided",
+      "request_id": 9,
+      "verdict": "DENIED",
+      "tier": "",
+      "conditions": "",
+      "reason": "The license explicitly states that print use of any kind is not offered, and no paid tier covers print use.",
+      "version": 1,
+      "status": "DENIED"
+    },
+    {
+      "case": "H1",
+      "attempt": 1,
+      "held_out": true,
+      "work_id": 9,
+      "expected": {
+        "verdict": "UNCLEAR",
+        "tier": ""
+      },
+      "tx": "0xac4ae4ccbfb211ff2f390e81676ce44491702b87be49b7dc14e47a433147f22f",
+      "sent_at": "2026-09-26T01:14:27Z",
+      "consensus": "decided",
+      "request_id": 10,
+      "verdict": "DENIED",
+      "tier": "",
+      "conditions": "",
+      "reason": "The license prohibits use for political causes, which includes an election explainer.",
+      "version": 1,
+      "status": "DENIED"
+    },
+    {
+      "case": "H2",
+      "attempt": 1,
+      "held_out": true,
+      "work_id": 10,
+      "expected": {
+        "verdict": "PAID",
+        "tier": "commercial"
+      },
+      "tx": "0x4b28ba6c306ca2e09f90cf84a35356ab9fb031256a58f8b8df85fa696fdc377a",
+      "sent_at": "2026-09-26T01:14:49Z",
+      "consensus": "decided",
+      "request_id": 11,
+      "verdict": "PAID",
+      "tier": "commercial",
+      "conditions": "",
+      "reason": "The user has 12,000 followers, which exceeds the 1,000-follower limit for free use and requires the commercial tier.",
+      "version": 1,
+      "status": "OFFER"
+    },
+    {
+      "case": "H3",
+      "attempt": 1,
+      "held_out": true,
+      "work_id": 11,
+      "expected": {
+        "verdict": "UNCLEAR",
+        "tier": ""
+      },
+      "tx": "0x1e8f048857b35815dc2e0c30b3eeced76dfa8744c700b9b2980ecd5f54639e01",
+      "sent_at": "2026-09-26T01:15:08Z",
+      "consensus": "decided",
+      "request_id": 12,
+      "verdict": "UNCLEAR",
+      "tier": "",
+      "conditions": "",
+      "reason": "The license only says 'Free for education' and does not clearly say whether a paid online course sold on a website counts as allowed educational use.",
+      "version": 1,
+      "status": "WAITING"
+    }
+  ],
+  "works": {
+    "1": {
+      "work_id": 1,
+      "tx": "0x8da430e349222416ed4c8067c5358831e561d3aca88054d7eb3fdc9e958d81e2",
+      "published_at": "2026-09-26T01:08:37Z"
+    },
+    "3": {
+      "work_id": 2,
+      "tx": "0x3ef00e28c28b76256ce85ff8f8eab4077afe1ad3ddd42949096f1e02c0a42e1c",
+      "published_at": "2026-09-26T01:09:22Z"
+    },
+    "4": {
+      "work_id": 3,
+      "tx": "0x02a02b17e97528cef1b0cb2d7421aef265802d3c9e8a9420c753590051552c80",
+      "published_at": "2026-09-26T01:09:49Z"
+    },
+    "5": {
+      "work_id": 4,
+      "tx": "0x216330afef7e8ef52ce406b43170e8cdd0d9db1bf82252fd648c4207dde31675",
+      "published_at": "2026-09-26T01:10:22Z"
+    },
+    "6": {
+      "work_id": 5,
+      "tx": "0x14389d392fcea817617a37240b12e7dc5d9c45ce1067fa0d5b5245320715d829",
+      "published_at": "2026-09-26T01:10:44Z"
+    },
+    "7": {
+      "work_id": 6,
+      "tx": "0xfc208e04a48c60d62320af6fb938458f89d1e285a5da13835792e2608b0020c7",
+      "published_at": "2026-09-26T01:11:07Z"
+    },
+    "8": {
+      "work_id": 7,
+      "tx": "0xc86abdde474e971cb9118f4e91374f47760981519bd74f224fef219bf29dea9a",
+      "published_at": "2026-09-26T01:11:34Z"
+    },
+    "9": {
+      "work_id": 8,
+      "tx": "0x7ddf9c4fcef3f47e07240d8b3dfe12f71ab24dc143e57d22eaadd534ae640de7",
+      "published_at": "2026-09-26T01:12:02Z"
+    },
+    "H1": {
+      "work_id": 9,
+      "tx": "0x7ee174137c5d1e0d67c72d705f5b1ffbcff09be53623e79ad230344f48f69def",
+      "published_at": "2026-09-26T01:14:13Z"
+    },
+    "H2": {
+      "work_id": 10,
+      "tx": "0x8f09219129e99c6f5f144bfc1b590d417d43daf2efc6c776caf7e118d5c8216a",
+      "published_at": "2026-09-26T01:14:36Z"
+    },
+    "H3": {
+      "work_id": 11,
+      "tx": "0x250cdf7792c4e256121c07ceb607feab721c4c22382962d09fd64419d348a55c",
+      "published_at": "2026-09-26T01:15:00Z"
+    }
+  },
+  "contract": "0x0336dB3c42C1ee09504664d7eCa63ae90A606bDf",
+  "contract_sha256": "3e7ef432f2391f49c99b8d8ae4d107de8798f9ca30902c5ecac3fb10149d872a",
+  "golden_sha256": "c4ea4f6999849a1ba56f6dfd8e8502a46fd60e0a3b8f9d66dbffa21b7340af7c",
+  "golden_locked_at": "2026-09-26T01:07:37Z",
+  "judge_sha256": "1c65e31baa597219e73247d66ebe974d708455ea3e79442bb83d48386323e341",
+  "network": "studio-next",
+  "explorer": "https://explorer-studio-dev.genlayer.com",
+  "creator": "0xe88606C2374Fe0846760dE3594FED948434d3f0f",
+  "asker": "0xC11C64fF29Ce865Caa02366c3f197C10A8769894"
+}

@@ -1,0 +1,6 @@
+{
+  "file": "eval/golden.json",
+  "sha256": "c4ea4f6999849a1ba56f6dfd8e8502a46fd60e0a3b8f9d66dbffa21b7340af7c",
+  "locked_at": "2026-09-26T01:07:37Z",
+  "note": "Hashed and timestamped before the first run. run_golden.py refuses to run if golden.json no longer matches this hash."
+}

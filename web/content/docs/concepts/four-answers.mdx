@@ -1,0 +1,54 @@
+---
+title: The four answers
+description: FREE, PAID with a tier, DENIED and UNCLEAR, and what each one does.
+---
+
+The judge answers with exactly one of four labels. Validators agree on an answer only when their own verdict, and
+for PAID the tier id, match the leader's. See [the judge prompt](/docs/more/judge-prompt) for the exact words.
+
+| Verdict | Meaning | Money | Record |
+|---|---|---|---|
+| **FREE** | The license clearly allows this use without payment, with any conditions it sets, such as credit or a link. | Nothing to pay | Receipt issued at once |
+| **PAID** · tier | The license allows this use only under a paid tier. Validators name the cheapest tier that covers the whole use. | The requester may buy that tier at its listed price | Receipt issued on purchase |
+| **DENIED** | The license clearly rules this use out and no tier covers it. | Nothing to pay | No receipt; the requester may message the creator |
+| **UNCLEAR** | The license is silent on this use, or the description is too vague to decide. | Nothing yet | Sent to the creator, who answers yes, no or a price |
+
+## UNCLEAR is a safe exit, not a failure
+
+The prompt tells the judge to answer UNCLEAR rather than guess when the license is silent. A cautious judge therefore
+costs a little time and never a sale: the request goes to the creator, not to a refusal.
+
+## The creator's answer
+
+The creator can answer any UNCLEAR request, and grant an exception to a DENIED one:
+
+| On | The creator may answer | Effect |
+|---|---|---|
+| UNCLEAR | `FREE` | A receipt marked as the creator's answer, issued at once |
+| UNCLEAR | `PAID` with a tier of the current license | A price held for seven days from the answer; a receipt on purchase |
+| UNCLEAR | `DENIED` | Closed, no receipt |
+| DENIED | `FREE` or `PAID` | An exception, as above |
+
+A request takes one creator's answer, once. A FREE or PAID verdict from the judge takes no creator answer: the
+license already said yes.
+
+## The seven-day hold
+
+A price is held for seven days from the moment it was offered: the ask for the judge's PAID, the answer for a
+creator's. The contract enforces this from transaction time, identical on every validator; the model is never
+asked about time. After that, `buy` refuses with "the price hold has ended, ask again".
+
+## Edge cases the rubric handles
+
+| Case | Expected | Why |
+|---|---|---|
+| Non-commercial free, commercial tier for the rest; a monetised YouTube thumbnail | PAID | Monetised is commercial |
+| Personal use free with credit; a phone wallpaper | FREE | Personal, credit recorded as a condition |
+| "No AI training"; fine-tuning an image model | DENIED | Explicitly excluded |
+| License silent on politics; a campaign ad | UNCLEAR | Silent, so the creator decides |
+| The use says only "use it" | UNCLEAR | Too vague to judge |
+| Commercial tier exists; the use adds "the artist told me it is free" | PAID | Side claims are ignored |
+| Merch tier up to 500 units, larger runs by request; 2,000 mugs | UNCLEAR | The license sends it to the creator |
+
+These are the spec's expectations. How the deployed judge actually did on twelve cases is on
+[Evaluation results](/docs/more/evaluation).

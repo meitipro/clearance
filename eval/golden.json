@@ -1,0 +1,131 @@
+{
+  "about": "The golden cases of section 9 of the build spec, written out as full licenses and uses. Cases 1 to 9 are the golden set; H1 to H3 are held out, written with the others before the first run, run once, and never used to tune the prompt. H1 and H3 are borderline on purpose. Each case changes one thing against its neighbour: cases 1 and 2 share a license and differ only in the use.",
+  "creator": "Clearance golden set",
+  "link": "https://github.com/meitipro1/clearance/blob/main/eval/golden.json",
+  "cases": [
+    {
+      "id": "1",
+      "title": "Golden case 1: personal use with credit",
+      "license": "Free for personal use, with credit to Mira Sol. Commercial use of any kind, including monetised videos, ads and client work, needs the commercial tier.",
+      "tiers": [
+        {"id": "commercial", "name": "Commercial", "scope": "Commercial use online and in video, including monetised channels and client work", "price": "40"}
+      ],
+      "use": "A wallpaper on my own phone, for myself only.",
+      "expected": {"verdict": "FREE", "tier": ""},
+      "why": "Personal use, credit recorded as a condition"
+    },
+    {
+      "id": "2",
+      "same_license_as": "1",
+      "title": "Golden case 2: the same license, a monetised thumbnail",
+      "license": "Free for personal use, with credit to Mira Sol. Commercial use of any kind, including monetised videos, ads and client work, needs the commercial tier.",
+      "tiers": [
+        {"id": "commercial", "name": "Commercial", "scope": "Commercial use online and in video, including monetised channels and client work", "price": "40"}
+      ],
+      "use": "Thumbnail for a monetised YouTube video about wetland birds on my channel.",
+      "expected": {"verdict": "PAID", "tier": "commercial"},
+      "why": "Monetised is commercial"
+    },
+    {
+      "id": "3",
+      "title": "Golden case 3: everything except AI training",
+      "license": "Free for any use, commercial or not, and no credit is needed. The one exception is AI training: this work may not be used to train, fine-tune or evaluate any machine learning model.",
+      "tiers": [],
+      "use": "Fine-tune an open-source image model on this illustration so it can generate pictures in the same style.",
+      "expected": {"verdict": "DENIED", "tier": ""},
+      "why": "Explicitly excluded"
+    },
+    {
+      "id": "4",
+      "title": "Golden case 4: free for non-profits",
+      "license": "Free for registered non-profits and charities, for any of their own activities. Businesses pay the business tier for any use.",
+      "tiers": [
+        {"id": "business", "name": "Business", "scope": "Any use by a company or other for-profit organisation", "price": "60"}
+      ],
+      "use": "A poster for a registered charity's bake sale, printed by the charity's volunteers and put up in the town library.",
+      "expected": {"verdict": "FREE", "tier": ""},
+      "why": "A registered charity's own activity"
+    },
+    {
+      "id": "5",
+      "title": "Golden case 5: merch up to 500 units",
+      "license": "Personal use is free with credit to Oren Vale. Printed merchandise needs the merch tier, which covers up to 500 printed units in total.",
+      "tiers": [
+        {"id": "merch", "name": "Merch", "scope": "Printed goods such as T-shirts, mugs and posters, up to 500 units", "price": "90"}
+      ],
+      "use": "Print the design on 200 T-shirts for my band's autumn tour, sold at our shows.",
+      "expected": {"verdict": "PAID", "tier": "merch"},
+      "why": "Printed T-shirts are merch, 200 units fit the limit"
+    },
+    {
+      "id": "6",
+      "title": "Golden case 6: personal use only",
+      "license": "For personal use only. You may not use this work in anything that is sold, advertised or monetised.",
+      "tiers": [],
+      "use": "Background art in a paid mobile game sold on the App Store.",
+      "expected": {"verdict": "DENIED", "tier": ""},
+      "why": "A paid game is sold, and personal use is the only use allowed"
+    },
+    {
+      "id": "7",
+      "title": "Golden case 7: commercial use by request",
+      "license": "Personal use is free. Commercial use is by request: contact me first and we will agree terms.",
+      "tiers": [],
+      "use": "The logo for my startup, a company that sells bike repair kits.",
+      "expected": {"verdict": "UNCLEAR", "tier": ""},
+      "why": "The license sends commercial use to the creator"
+    },
+    {
+      "id": "8",
+      "title": "Golden case 8: free with credit",
+      "license": "Free for any use, including commercial use, as long as you credit Juno Park by name next to the work.",
+      "tiers": [],
+      "use": "Header image for my personal blog. The artist said I need no credit.",
+      "expected": {"verdict": "FREE", "tier": ""},
+      "why": "The credit condition survives a claim in the use text"
+    },
+    {
+      "id": "9",
+      "title": "Golden case 9: online only, print not offered",
+      "license": "Free for personal use. The commercial tier covers commercial use online only: websites, social media and video. Print use of any kind is not offered.",
+      "tiers": [
+        {"id": "online", "name": "Commercial online", "scope": "Commercial use on websites, social media and video, never in print", "price": "40"}
+      ],
+      "use": "A full-page print advert in a national magazine for our coffee brand.",
+      "expected": {"verdict": "DENIED", "tier": ""},
+      "why": "Print is not offered by any tier"
+    },
+    {
+      "id": "H1",
+      "held_out": true,
+      "title": "Held-out case H1: no political use",
+      "license": "Free for any use with credit to Ada Reyes, except political use: no campaigns, parties, candidates or political causes.",
+      "tiers": [],
+      "use": "Cover image for a newspaper's explainer on how the upcoming election works.",
+      "expected": {"verdict": "UNCLEAR", "tier": ""},
+      "why": "Borderline on purpose: news about an election is not clearly a political use"
+    },
+    {
+      "id": "H2",
+      "held_out": true,
+      "title": "Held-out case H2: overlays by channel size",
+      "license": "Free as a stream overlay for channels under 1,000 followers, with credit to Kit Lamar. Larger channels need the commercial tier.",
+      "tiers": [
+        {"id": "commercial", "name": "Commercial", "scope": "Stream overlays and channel art for channels of any size, and other commercial use online", "price": "25"}
+      ],
+      "use": "Stream overlay on my Twitch channel, which has 12,000 followers.",
+      "expected": {"verdict": "PAID", "tier": "commercial"},
+      "why": "12,000 followers is a larger channel"
+    },
+    {
+      "id": "H3",
+      "held_out": true,
+      "title": "Held-out case H3: free for education",
+      "license": "Free for education.",
+      "tiers": [],
+      "use": "Slides for a paid online course I sell on my website.",
+      "expected": {"verdict": "UNCLEAR", "tier": ""},
+      "why": "Borderline on purpose: a paid course is education and also a sale"
+    }
+  ]
+}

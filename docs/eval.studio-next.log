@@ -1,0 +1,58 @@
+1: already decided, never sent again
+
+2 Golden case 2: the same license, a monetised thumbnail (expected PAID commercial)
+  ask 0xdd384bc016c3fdc121bdc1e1d0823c9680ad757d882bbc1cfd12325ba52a9ba3
+  MATCH PAID commercial  A thumbnail for a monetised YouTube video is commercial use, and the license says monetised videos need the commercial tier.
+  https://explorer-studio-dev.genlayer.com/tx/0xdd384bc016c3fdc121bdc1e1d0823c9680ad757d882bbc1cfd12325ba52a9ba3
+
+3 Golden case 3: everything except AI training (expected DENIED )
+  publish_work 0x3ef00e28c28b76256ce85ff8f8eab4077afe1ad3ddd42949096f1e02c0a42e1c
+  published work 2  https://explorer-studio-dev.genlayer.com/tx/0x3ef00e28c28b76256ce85ff8f8eab4077afe1ad3ddd42949096f1e02c0a42e1c
+  ask 0x2872a1d40270ee52b1658616a793434c50cd1997391aac9bb4d2844b90af254e
+  MATCH DENIED   The license explicitly prohibits using the work to fine-tune any machine learning model.
+  https://explorer-studio-dev.genlayer.com/tx/0x2872a1d40270ee52b1658616a793434c50cd1997391aac9bb4d2844b90af254e
+
+4 Golden case 4: free for non-profits (expected FREE )
+  publish_work 0x02a02b17e97528cef1b0cb2d7421aef265802d3c9e8a9420c753590051552c80
+  published work 3  https://explorer-studio-dev.genlayer.com/tx/0x02a02b17e97528cef1b0cb2d7421aef265802d3c9e8a9420c753590051552c80
+  ask 0x660d9e470ccb200221f85c2ad76032d65311d39587a1188cfc8f0b321e1f1f1f
+  MATCH FREE   The license says registered non-profits and charities may use the work free for any of their own activities, and a charity's bake sale poster fits that.
+  https://explorer-studio-dev.genlayer.com/tx/0x660d9e470ccb200221f85c2ad76032d65311d39587a1188cfc8f0b321e1f1f1f
+
+5 Golden case 5: merch up to 500 units (expected PAID merch)
+  publish_work 0x216330afef7e8ef52ce406b43170e8cdd0d9db1bf82252fd648c4207dde31675
+  published work 4  https://explorer-studio-dev.genlayer.com/tx/0x216330afef7e8ef52ce406b43170e8cdd0d9db1bf82252fd648c4207dde31675
+  ask 0xfd52a6e1e08504aab30d9a768a094581faa2a3d1b81911c4036245093e626322
+  MATCH PAID merch  Printed merchandise requires the merch tier and 200 T‑shirts are within its 500‑unit limit.
+  https://explorer-studio-dev.genlayer.com/tx/0xfd52a6e1e08504aab30d9a768a094581faa2a3d1b81911c4036245093e626322
+
+6 Golden case 6: personal use only (expected DENIED )
+  publish_work 0x14389d392fcea817617a37240b12e7dc5d9c45ce1067fa0d5b5245320715d829
+  published work 5  https://explorer-studio-dev.genlayer.com/tx/0x14389d392fcea817617a37240b12e7dc5d9c45ce1067fa0d5b5245320715d829
+  ask 0x1c8bb0c609a2ae5405933f9f2441899d58dc6ddd3f83075998b83cf9b2a6167a
+  MATCH DENIED   The license explicitly prohibits use in anything that is sold or monetised, and a paid mobile game sold on the App Store falls directly under that prohibition.
+  https://explorer-studio-dev.genlayer.com/tx/0x1c8bb0c609a2ae5405933f9f2441899d58dc6ddd3f83075998b83cf9b2a6167a
+
+7 Golden case 7: commercial use by request (expected UNCLEAR )
+  publish_work 0xfc208e04a48c60d62320af6fb938458f89d1e285a5da13835792e2608b0020c7
+  published work 6  https://explorer-studio-dev.genlayer.com/tx/0xfc208e04a48c60d62320af6fb938458f89d1e285a5da13835792e2608b0020c7
+  ask 0x89e9eeb4a986c9e895d8f58bb9597616f240a617017e23965d1968f98ac0fc57
+  MATCH UNCLEAR   The license says personal use is free and commercial use requires contacting the creator to agree terms, but it provides no paid tier or definite permission for this commercial logo use.
+  https://explorer-studio-dev.genlayer.com/tx/0x89e9eeb4a986c9e895d8f58bb9597616f240a617017e23965d1968f98ac0fc57
+
+8 Golden case 8: free with credit (expected FREE )
+  publish_work 0xc86abdde474e971cb9118f4e91374f47760981519bd74f224fef219bf29dea9a
+  published work 7  https://explorer-studio-dev.genlayer.com/tx/0xc86abdde474e971cb9118f4e91374f47760981519bd74f224fef219bf29dea9a
+  ask 0x04df26043576a0fb4a2da2266174e27839f7e83d7990b5c1dee389431aef5791
+  MATCH FREE   The license allows any use, including a personal blog header image, as long as Juno Park is credited by name next to the work.
+  https://explorer-studio-dev.genlayer.com/tx/0x04df26043576a0fb4a2da2266174e27839f7e83d7990b5c1dee389431aef5791
+
+9 Golden case 9: online only, print not offered (expected DENIED )
+  publish_work 0x7ddf9c4fcef3f47e07240d8b3dfe12f71ab24dc143e57d22eaadd534ae640de7
+  published work 8  https://explorer-studio-dev.genlayer.com/tx/0x7ddf9c4fcef3f47e07240d8b3dfe12f71ab24dc143e57d22eaadd534ae640de7
+  ask 0x0f326050dd44c1e99ef14278c63ecc4cd9f81ff627faa3b7068091629b0672f8
+  MATCH DENIED   The license explicitly states that print use of any kind is not offered, and no paid tier covers print use.
+  https://explorer-studio-dev.genlayer.com/tx/0x0f326050dd44c1e99ef14278c63ecc4cd9f81ff627faa3b7068091629b0672f8
+
+wrote eval/results.md: golden 9/9, held out 0/0
+golden exit=0

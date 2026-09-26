@@ -1,0 +1,49 @@
+---
+title: Introduction
+description: Plain-language licenses that answer for themselves, judged by GenLayer validators.
+---
+
+Clearance is a licensing desk on GenLayer. A creator publishes a work with a license written in their own words and
+up to four priced tiers. Anyone describes how they want to use the work and asks. Several GenLayer validators read
+the license against the use, each with their own model, and answer one of four things:
+
+| Answer | What happens |
+|---|---|
+| **FREE** | The license allows the use without payment. A receipt is issued at once, with any conditions the license sets, such as credit. |
+| **PAID** with a tier | The license allows the use only under a paid tier. The requester can buy that tier at the stored price for seven days; the receipt is issued on purchase. |
+| **DENIED** | The license clearly rules the use out and no tier covers it. No receipt. The creator may still grant an exception. |
+| **UNCLEAR** | The license does not say enough, or the use is too vague. The request goes to the creator, who answers yes, no or a price. |
+
+Every receipt is a public page pinned to the exact license version it was issued under, so a creator who changes
+their terms later cannot change what an earlier receipt covers.
+
+<Callout title="Not legal advice">
+  Clearance applies the creator's own words and nothing else. It does not decide what copyright law allows, such as
+  fair use, and it cannot prove that a creator made what they publish. Every receipt says so.
+</Callout>
+
+## Who these docs are for
+
+<Cards>
+  <Card title="Creators" href="/docs/publish-your-first-work">Publish a work and write a license the judge can read.</Card>
+  <Card title="Users" href="/docs/quickstart">Ask whether a use is allowed and keep the receipt.</Card>
+  <Card title="Developers" href="/docs/reference/receipt-check">Check a receipt from your own platform, in one read.</Card>
+</Cards>
+
+## Why GenLayer
+
+Every request turns on one question: does this license, as written, allow this use? That is interpretation, and
+whoever answers it decides whether a sale happens. If the creator's shop answered, users would suspect it of saying
+paid too often; if a platform answered, creators would suspect it of saying free. On GenLayer an answer stands only
+when validators with their own models agree on it.
+
+The license and the use are short texts already on chain, so every validator reads identical input. The four
+answers are far apart, and validators compare only the verdict and the tier, so agreement is stable. Money moves in
+two places only: when a requester buys a tier, and when a creator withdraws.
+
+## The deployment
+
+Clearance runs on GenLayer Studio Next, chain 61997. The contract, its deploy transaction and the hash of its source
+are on [Addresses and network](/docs/reference/addresses). The judge was tested on twelve cases through real
+consensus before the site shipped; the results, misses included, are on
+[Evaluation results](/docs/more/evaluation).

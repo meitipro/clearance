@@ -1,0 +1,24 @@
+
+H1 Held-out case H1: no political use (expected UNCLEAR )
+  publish_work 0x7ee174137c5d1e0d67c72d705f5b1ffbcff09be53623e79ad230344f48f69def
+  published work 9  https://explorer-studio-dev.genlayer.com/tx/0x7ee174137c5d1e0d67c72d705f5b1ffbcff09be53623e79ad230344f48f69def
+  ask 0xac4ae4ccbfb211ff2f390e81676ce44491702b87be49b7dc14e47a433147f22f
+  MISS  DENIED   The license prohibits use for political causes, which includes an election explainer.
+  https://explorer-studio-dev.genlayer.com/tx/0xac4ae4ccbfb211ff2f390e81676ce44491702b87be49b7dc14e47a433147f22f
+
+H2 Held-out case H2: overlays by channel size (expected PAID commercial)
+  publish_work 0x8f09219129e99c6f5f144bfc1b590d417d43daf2efc6c776caf7e118d5c8216a
+  published work 10  https://explorer-studio-dev.genlayer.com/tx/0x8f09219129e99c6f5f144bfc1b590d417d43daf2efc6c776caf7e118d5c8216a
+  ask 0x4b28ba6c306ca2e09f90cf84a35356ab9fb031256a58f8b8df85fa696fdc377a
+  MATCH PAID commercial  The user has 12,000 followers, which exceeds the 1,000-follower limit for free use and requires the commercial tier.
+  https://explorer-studio-dev.genlayer.com/tx/0x4b28ba6c306ca2e09f90cf84a35356ab9fb031256a58f8b8df85fa696fdc377a
+
+H3 Held-out case H3: free for education (expected UNCLEAR )
+  publish_work 0x250cdf7792c4e256121c07ceb607feab721c4c22382962d09fd64419d348a55c
+  published work 11  https://explorer-studio-dev.genlayer.com/tx/0x250cdf7792c4e256121c07ceb607feab721c4c22382962d09fd64419d348a55c
+  ask 0x1e8f048857b35815dc2e0c30b3eeced76dfa8744c700b9b2980ecd5f54639e01
+  MATCH UNCLEAR   The license only says 'Free for education' and does not clearly say whether a paid online course sold on a website counts as allowed educational use.
+  https://explorer-studio-dev.genlayer.com/tx/0x1e8f048857b35815dc2e0c30b3eeced76dfa8744c700b9b2980ecd5f54639e01
+
+wrote eval/results.md: golden 9/9, held out 2/3
+held-out exit=0

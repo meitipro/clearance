@@ -1,0 +1,148 @@
+---
+title: 'Quickstart: ask about a use in one minute'
+description: Ask whether a use is allowed and get a receipt, from the site or from code.
+---
+
+<Callout>Clearance applies the creator's own words. It is not legal advice.</Callout>
+
+## Ask about a use
+
+<Tabs items={['On the site', 'From code']}>
+  <Tab value="On the site">
+    <Steps>
+      <Step>
+        Open a work from [Explore](/explore) and read its license and tiers.
+      </Step>
+      <Step>
+        In **Ask about a use**, describe the use in at most 600 characters. The four chips, WHERE, HOW MANY,
+        COMMERCIAL? and HOW LONG, start a sentence about each fact licenses turn on.
+      </Step>
+      <Step>
+        Press **Ask the license**. The site walks you through connecting a wallet, switching to Studio Next (chain
+        61997) and getting free test GEN, then asks you to sign.
+      </Step>
+      <Step>
+        While validators read the license, the site shows the transaction link. The answer usually lands in under a
+        minute.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab value="From code">
+    This is `web/examples/ask.mjs` from the repository, run as written:
+
+{/* include: examples/ask.mjs */}
+```js title="examples/ask.mjs"
+// Ask whether a use is allowed, from code. The key comes from the environment.
+//   PRIVATE_KEY=0x... node examples/ask.mjs 1 "Phone wallpaper for myself."
+import { createAccount, createClient } from "genlayer-js";
+import { studioDevnet } from "genlayer-js/chains";
+
+const CLEARANCE = "0x0336dB3c42C1ee09504664d7eCa63ae90A606bDf";
+const chain = { ...studioDevnet, rpcUrls: { default: { http: ["https://studio-next.genlayer.com/api"] } } };
+const account = createAccount(process.env.PRIVATE_KEY);
+const client = createClient({ chain, account });
+
+const [workId, use] = [Number(process.argv[2]), process.argv[3]];
+
+// Studio Next charges a fee deposit on every write; the SDK estimates it.
+// ask() runs the judge, so it is allowed three rotations.
+const estimate = await client.estimateTransactionFees({
+  leaderTimeunitsAllocation: 600,
+  validatorTimeunitsAllocation: 600,
+  totalMessageFees: 0,
+  rotations: [3],
+});
+const hash = await client.writeContract({
+  address: CLEARANCE,
+  functionName: "ask",
+  args: [workId, use],
+  value: 0n,
+  fees: { distribution: estimate.distribution, feeValue: estimate.feeValue },
+});
+console.log("asked", hash);
+
+const receipt = await client.waitForTransactionReceipt({ hash, waitUntil: "decided", interval: 4000, retries: 120 });
+const leader = receipt.consensus_data.leader_receipt[0];
+// ACCEPTED is not success: validators can agree that a refusal is right.
+if (leader.execution_result !== "SUCCESS" || leader.result.status !== "return") {
+  throw new Error(`refused: ${JSON.stringify(leader.result.payload)}`);
+}
+const requestId = Number(leader.result.payload.readable);
+const answer = JSON.parse(await client.readContract({ address: CLEARANCE, functionName: "get_request", args: [requestId] }));
+console.log(answer.verdict, answer.tier, answer.reason);
+```
+{/* end include */}
+  </Tab>
+</Tabs>
+
+A write that is ACCEPTED is not necessarily a success: validators can agree that a refusal is the right result. The
+sample checks that the leader's execution returned, which is the same test the site uses. See [Errors](/docs/reference/errors).
+
+## Read the answer
+
+Views are free and need no wallet. This is `web/examples/read-request.mjs`:
+
+{/* include: examples/read-request.mjs */}
+```js title="examples/read-request.mjs"
+// Read one request and its receipt state. No wallet and no key: views are free.
+//   node examples/read-request.mjs 2
+import { createClient } from "genlayer-js";
+import { studioDevnet } from "genlayer-js/chains";
+
+const CLEARANCE = "0x0336dB3c42C1ee09504664d7eCa63ae90A606bDf";
+const chain = { ...studioDevnet, rpcUrls: { default: { http: ["https://studio-next.genlayer.com/api"] } } };
+const client = createClient({ chain });
+
+const id = Number(process.argv[2] ?? 1);
+const raw = await client.readContract({ address: CLEARANCE, functionName: "get_request", args: [id] });
+const request = JSON.parse(raw);
+if (!request.found) {
+  console.log(`no request ${id}`);
+} else {
+  const { verdict, tier, price, conditions, reason, status, version, receipt } = request;
+  console.log({ verdict, tier, price, conditions, reason, status, version, receipt });
+}
+```
+{/* end include */}
+
+The same read from Python, `web/examples/read_request.py`:
+
+{/* include: examples/read_request.py */}
+```python title="examples/read_request.py"
+# Read one request from Python. genlayer-py 0.19.0rc2 reads through an account,
+# so a throwaway one is made; it is never funded and never signs.
+#   python examples/read_request.py 2
+import json
+import sys
+
+from genlayer_py import create_account, create_client
+from genlayer_py.chains import studio_devnet
+
+# A model's reason can carry any character; a Windows console codepage cannot.
+sys.stdout.reconfigure(encoding="utf-8")
+
+CLEARANCE = "0x0336dB3c42C1ee09504664d7eCa63ae90A606bDf"
+studio_devnet.rpc_urls = {"default": {"http": ["https://studio-next.genlayer.com/api"]}}
+client = create_client(chain=studio_devnet, account=create_account())
+
+request_id = int(sys.argv[1]) if len(sys.argv) > 1 else 1
+raw = client.read_contract(address=CLEARANCE, function_name="get_request", args=[request_id])
+request = json.loads(raw)
+if request["found"]:
+    print(request["verdict"], request["tier"], request["status"], request["reason"])
+else:
+    print(f"no request {request_id}")
+```
+{/* end include */}
+
+## Buy the tier
+
+A PAID answer shows **Buy the … tier** with its price. Only the account that asked can buy, at exactly the stored
+price, within seven days of the answer; after that, ask again. On purchase the receipt is issued and the price goes
+to the creator's balance in the contract.
+
+## Share the receipt
+
+Every receipt has a public page, `/r/RC-0042` for request 42, showing the use word for word, the answer and its
+reason, the license version and its hash, and the transactions. Send the link; nobody needs a wallet to read it.
+See [Receipts and what they prove](/docs/concepts/receipts).
