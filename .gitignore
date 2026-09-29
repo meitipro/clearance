@@ -17,3 +17,6 @@ accounts.json
 .claude/
 # Vercel CLI link data.
 .vercel/
+
+.vercel
+.env*
