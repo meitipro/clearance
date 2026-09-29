@@ -15,6 +15,6 @@ What only the owner of this repository can do, and what is already done for them
 - Contract deployed and frozen on Studio Next; do not redeploy or change `contracts/clearance.py` without deciding
   to, because `contracts/FROZEN.json` and `scripts/verify.py` hold the repository to the deployed bytes.
 - Repository public at https://github.com/meitipro/clearance, site live at
-  https://clearance-genlayer-sooty.vercel.app (Vercel project `clearance-genlayer` in team mahdighs-projects,
+  https://useclearance.vercel.app (Vercel project `clearance-genlayer` in team mahdighs-projects,
   linked by the CLI from `web/`; redeploy with `npx vercel deploy --prod --scope mahdighs-projects` in `web/`).
 - Test accounts live in `~/.clearance/accounts.json` on the build machine only.

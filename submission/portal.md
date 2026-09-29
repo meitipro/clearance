@@ -38,7 +38,7 @@ _817 characters of 1000_
 
 ## Path steps
 
-1. **Open a work**: Go to https://clearance-genlayer-sooty.vercel.app/explore and open a work, for example Fox in the Reeds. Read its license and tiers; no wallet is needed to read.
+1. **Open a work**: Go to https://useclearance.vercel.app/explore and open a work, for example Fox in the Reeds. Read its license and tiers; no wallet is needed to read.
 2. **Get set up**: In Ask about a use, press Ask the license. The site walks you through Connect wallet, Switch network (it adds Studio Next, chain 61997) and Get test GEN.
 3. **Ask about a use**: Describe a use, for example: Thumbnail for a monetised YouTube video about wetland birds on my channel. Press Ask the license and sign. While validators read, the transaction link shows; the answer lands in under a minute.
 4. **Buy the tier**: On a PAID answer press Buy the commercial tier, 40 GEN and sign. Then press Get receipt.
@@ -47,7 +47,7 @@ _817 characters of 1000_
 
 ## Proof
 
-Contract https://explorer-studio-dev.genlayer.com/address/0x0336dB3c42C1ee09504664d7eCa63ae90A606bDf (Studio Next, chain 61997); deployed bytes identical to contracts/clearance.py. Golden cases with every transaction: https://clearance-genlayer-sooty.vercel.app/docs/more/evaluation (9/9, held out 2/3; the H1 miss is published). Reviewer path from fresh accounts on the live site: ask https://explorer-studio-dev.genlayer.com/tx/0xec83dc6acc03d4b4ef18edc1232631205f31ac9d12dc95b9dfe3b6acb1a5c17b , buy https://explorer-studio-dev.genlayer.com/tx/0x80686bc6b502a1aadff6202c9fcef77209483a6a2ae4dcfda9f0fa04df4cc6b5 , creator answer https://explorer-studio-dev.genlayer.com/tx/0x4837772899bc02aa0a78b5fce62f870e8f0ad7b726f2447cb5776247d717cccc , withdraw https://explorer-studio-dev.genlayer.com/tx/0xa4b2a497e014e8ab1e2463b3acf2454fca043f013cbcc245faa1f4ea0cc630c2 ; balances reconciled to the wei after finality. A creator's priced exception on a second license version: https://clearance-genlayer-sooty.vercel.app/r/RC-0017
+Contract https://explorer-studio-dev.genlayer.com/address/0x0336dB3c42C1ee09504664d7eCa63ae90A606bDf (Studio Next, chain 61997); deployed bytes identical to contracts/clearance.py. Golden cases with every transaction: https://useclearance.vercel.app/docs/more/evaluation (9/9, held out 2/3; the H1 miss is published). Reviewer path from fresh accounts on the live site: ask https://explorer-studio-dev.genlayer.com/tx/0xec83dc6acc03d4b4ef18edc1232631205f31ac9d12dc95b9dfe3b6acb1a5c17b , buy https://explorer-studio-dev.genlayer.com/tx/0x80686bc6b502a1aadff6202c9fcef77209483a6a2ae4dcfda9f0fa04df4cc6b5 , creator answer https://explorer-studio-dev.genlayer.com/tx/0x4837772899bc02aa0a78b5fce62f870e8f0ad7b726f2447cb5776247d717cccc , withdraw https://explorer-studio-dev.genlayer.com/tx/0xa4b2a497e014e8ab1e2463b3acf2454fca043f013cbcc245faa1f4ea0cc630c2 ; balances reconciled to the wei after finality. A creator's priced exception on a second license version: https://useclearance.vercel.app/r/RC-0017
 
 _1024 characters_
 

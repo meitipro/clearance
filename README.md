@@ -6,8 +6,8 @@ the use and answer **FREE**, **PAID** with a tier, **DENIED** or **UNCLEAR**. A 
 paid yes is bought on the spot, unclear ones go to the creator, and every receipt is pinned to the exact license
 version it was issued under.
 
-- **Site:** https://clearance-genlayer-sooty.vercel.app
-- **Docs:** https://clearance-genlayer-sooty.vercel.app/docs
+- **Site:** https://useclearance.vercel.app
+- **Docs:** https://useclearance.vercel.app/docs
 - **Contract:** [`0x0336dB3c42C1ee09504664d7eCa63ae90A606bDf`](https://explorer-studio-dev.genlayer.com/address/0x0336dB3c42C1ee09504664d7eCa63ae90A606bDf) on GenLayer **Studio Next** (chain 61997)
 - **Deploy transaction:** [`0xc0065821…4cd28`](https://explorer-studio-dev.genlayer.com/tx/0xc0065821db56ec5029c3c46c00669d3766fecc1c3c0017a0d567853f24e4cd28), source sha256 `3e7ef432f2391f49c99b8d8ae4d107de8798f9ca30902c5ecac3fb10149d872a`
 
@@ -96,4 +96,4 @@ every attempt persisted before it was printed (33); and the score published as i
 
 No ask fee against spam (a refund would move money inside judging). A creator's priced answer uses a tier of the
 current license. The judge can miss, as H1 shows. Studio Next is a test network. See
-[Limitations](https://clearance-genlayer-sooty.vercel.app/docs/more/limitations).
+[Limitations](https://useclearance.vercel.app/docs/more/limitations).

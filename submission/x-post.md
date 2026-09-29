@@ -6,6 +6,6 @@ Clearance: a creator writes their license once, in plain words. You describe you
 
 Live on Studio Next, with its golden cases published as they came out: 9/9, held-out 2/3.
 
-https://clearance-genlayer-sooty.vercel.app
+https://useclearance.vercel.app
 
 @GenLayer
