@@ -31,7 +31,7 @@ publish_work(title: str, link: str, license: str, tiers_json: str) -> int
 
 **Write.** Create a work with license version 1 and up to four tiers. The caller becomes its creator.
 
-[Source, line 575](https://github.com/meitipro1/clearance/blob/main/contracts/clearance.py#L575)
+[Source, line 575](https://github.com/meitipro/clearance/blob/main/contracts/clearance.py#L575)
 
 ## amend_license
 
@@ -45,7 +45,7 @@ Refusals raised in the method itself (helpers such as the tier and text checks a
 
 - `[EXPECTED] only the creator may amend this license`
 
-[Source, line 606](https://github.com/meitipro1/clearance/blob/main/contracts/clearance.py#L606)
+[Source, line 606](https://github.com/meitipro/clearance/blob/main/contracts/clearance.py#L606)
 
 ## ask
 
@@ -59,7 +59,7 @@ Refusals raised in the method itself (helpers such as the tier and text checks a
 
 - `[EXPECTED] the judge named a tier this license does not have`
 
-[Source, line 627](https://github.com/meitipro1/clearance/blob/main/contracts/clearance.py#L627)
+[Source, line 627](https://github.com/meitipro/clearance/blob/main/contracts/clearance.py#L627)
 
 ## buy
 
@@ -77,7 +77,7 @@ Refusals raised in the method itself (helpers such as the tier and text checks a
 - `[EXPECTED] the price hold has ended, ask again`
 - `[EXPECTED] this request already has a receipt`
 
-[Source, line 697](https://github.com/meitipro1/clearance/blob/main/contracts/clearance.py#L697)
+[Source, line 697](https://github.com/meitipro/clearance/blob/main/contracts/clearance.py#L697)
 
 ## answer
 
@@ -98,7 +98,7 @@ Refusals raised in the method itself (helpers such as the tier and text checks a
 - `[EXPECTED] this request already has a receipt`
 - `[EXPECTED] this request already has the creator's answer`
 
-[Source, line 723](https://github.com/meitipro1/clearance/blob/main/contracts/clearance.py#L723)
+[Source, line 723](https://github.com/meitipro/clearance/blob/main/contracts/clearance.py#L723)
 
 ## withdraw
 
@@ -112,7 +112,7 @@ Refusals raised in the method itself (helpers such as the tier and text checks a
 
 - `[EXPECTED] nothing to withdraw`
 
-[Source, line 772](https://github.com/meitipro1/clearance/blob/main/contracts/clearance.py#L772)
+[Source, line 772](https://github.com/meitipro/clearance/blob/main/contracts/clearance.py#L772)
 
 ## get_work
 
@@ -122,7 +122,7 @@ get_work(work_id: int) -> str
 
 **View.** Work, current license, tiers and counts, plus the creator's balance. &#123;"found": false&#125; when there is none.
 
-[Source, line 865](https://github.com/meitipro1/clearance/blob/main/contracts/clearance.py#L865)
+[Source, line 865](https://github.com/meitipro/clearance/blob/main/contracts/clearance.py#L865)
 
 ## get_license
 
@@ -132,7 +132,7 @@ get_license(work_id: int, version: int) -> str
 
 **View.** Any past version of a work's license, for receipts.
 
-[Source, line 875](https://github.com/meitipro1/clearance/blob/main/contracts/clearance.py#L875)
+[Source, line 875](https://github.com/meitipro/clearance/blob/main/contracts/clearance.py#L875)
 
 ## get_request
 
@@ -142,7 +142,7 @@ get_request(request_id: int) -> str
 
 **View.** Use, verdict, tier, price, conditions, reason and receipt state.
 
-[Source, line 898](https://github.com/meitipro1/clearance/blob/main/contracts/clearance.py#L898)
+[Source, line 898](https://github.com/meitipro/clearance/blob/main/contracts/clearance.py#L898)
 
 ## list_requests
 
@@ -152,7 +152,7 @@ list_requests(work_id: int, offset: int, limit: int) -> str
 
 **View.** Answers newest first: one work's, or across every work when work_id is 0.
 
-[Source, line 908](https://github.com/meitipro1/clearance/blob/main/contracts/clearance.py#L908)
+[Source, line 908](https://github.com/meitipro/clearance/blob/main/contracts/clearance.py#L908)
 
 ## list_works
 
@@ -162,4 +162,4 @@ list_works(offset: int, limit: int) -> str
 
 **View.** Works newest first, for explore.
 
-[Source, line 932](https://github.com/meitipro1/clearance/blob/main/contracts/clearance.py#L932)
+[Source, line 932](https://github.com/meitipro/clearance/blob/main/contracts/clearance.py#L932)

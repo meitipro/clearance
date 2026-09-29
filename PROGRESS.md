@@ -19,3 +19,4 @@ One line per step, in order, 2026-09-26. Every figure is read from a file in thi
 - Deployed to Vercel: https://clearance-genlayer-sooty.vercel.app (project `clearance-genlayer`); every main route answers 200.
 - Reviewer path on the live site from two fresh accounts: faucet, publish, ask and buy, a FREE ask, an UNCLEAR ask with the creator's answer, withdraw, live pages. Balances reconciled after finality: the user exact to the wei; the creator exact once the External message fee the chain lists as consumed, but did not charge, is left out.
 - Portal text, X post, demo script and logo in `submission/`, counted and every link opened.
+- Moved the public home to https://github.com/meitipro/clearance (full history, unchanged); the first home, meitipro1/clearance, made private. Links recorded on chain by the seed and golden runs still name meitipro1, as sent.

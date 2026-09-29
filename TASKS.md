@@ -8,7 +8,7 @@ The build order of section 11 of the spec. A fresh session can resume from this 
 - [x] 4. `web/`: landing, work, receipt, studio, publish, explore (and receipts), with genlayer-js 2.0.0-rc.1
 - [x] 5. `/docs`: every page of section 7, built like official docs, plus `/llms.txt` and `/llms-full.txt`
 - [x] 6. `scripts/seed.py`, README, and `submission/` (portal text, X post, silent demo script, 512 px logo), from real results
-- [x] Public repository: https://github.com/meitipro1/clearance
+- [x] Public repository: https://github.com/meitipro/clearance
 - [x] Site on Vercel: https://clearance-genlayer-sooty.vercel.app
 - [x] The reviewer's path from fresh accounts, through the site's own signing code, on the deployed site, to finality (`docs/reviewer-path.studio-next.md`)
 

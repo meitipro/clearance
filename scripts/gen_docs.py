@@ -183,7 +183,7 @@ def build() -> dict[pathlib.Path, str]:
                 lines.append(f"- `[{'EXPECTED' if e['prefix'] == 'E' else 'LLM_ERROR'}] {e['text']}`")
             lines.append("")
         lines.append(
-            f"[Source, line {m['line']}](https://github.com/meitipro1/clearance/blob/main/contracts/clearance.py#L{m['line']})"
+            f"[Source, line {m['line']}](https://github.com/meitipro/clearance/blob/main/contracts/clearance.py#L{m['line']})"
         )
         lines.append("")
     files[DOCS / "reference" / "contract.mdx"] = "\n".join(lines)
